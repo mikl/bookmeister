@@ -1,0 +1,9 @@
+name = Bookmeister base
+description = Base configuration for the Bookmeister install profile.
+core = 7.x
+package = Bookmeister
+dependencies[] = admin_menu
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = module_filter
+features[features_api][] = api:2

@@ -1,0 +1,5 @@
+name = Bookmeister
+description = Bookmark management distribution.
+core = 7.x
+dependencies[] = dblog
+dependencies[] = bookmeister_base

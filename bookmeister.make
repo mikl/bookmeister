@@ -11,6 +11,8 @@ projects[ctools][version] = "1.4"
 
 projects[entity][version] = "1.5"
 
+projects[features][version] = "2.0"
+
 projects[jquery_update][version] = "2.4"
 
 projects[libraries][version] = "2.2"
