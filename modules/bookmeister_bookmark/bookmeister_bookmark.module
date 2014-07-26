@@ -3,3 +3,155 @@
  * @file
  * Bookmeister bookmark module.
  */
+
+define('BOOKMEISTER_BOOKMARK_ADMIN_BASE_PATH', 'admin/content/bookmeister_bookmark');
+
+/**
+ * Implements hook_permission().
+ */
+function bookmeister_bookmark_permission() {
+  return array(
+    'administer bookmeister_bookmark entities' => array(
+      'title' => t('Administer Bookmeister bookmarks'),
+      'description' => t('Grants access to perform CRUD on any bookmark entities.'),
+      'restrict access' => TRUE,
+    ),
+  );
+}
+
+/**
+ * Implements hook_entity_info().
+ */
+function bookmeister_bookmark_entity_info() {
+  $entities = array();
+
+  $entities['bookmeister_bookmark'] = array(
+    // Basic entity info.
+    'label' => t('Bookmark'),
+    'base table' => 'bookmeister_bookmarks',
+    'module' => 'bookmeister_bookmark',
+    'entity class' => 'BookmeisterBookmark',
+    'controller class' => 'BookmeisterBookmarkController',
+    'fieldable' => TRUE,
+    // These fields should be recognized by Drupal.
+    'entity keys' => array(
+      'id' => 'id',
+      'uuid' => 'uuid',
+      'label' => 'title',
+    ),
+    'uuid' => TRUE,
+    // Define a default bundle.
+    'bundles' => array(
+      'bookmeister_bookmark' => array(
+        'label' => t('Bookmark'),
+        'admin' => array(
+          'path' => BOOKMEISTER_BOOKMARK_ADMIN_BASE_PATH,
+          'access arguments' => array('administer bookmeister_bookmark entities'),
+        ),
+      ),
+    ),
+    'access callback' => 'bookmeister_bookmark_access',
+    // Define hooks and callbacks.
+    'label callback' => 'entity_class_label',
+    'uri callback' => 'entity_class_uri',
+    'load hook' => 'bookmeister_bookmark_load',
+    // Make it work with Views.
+    'views controller class' => 'EntityDefaultViewsController',
+    'admin ui' => array(
+      'path' => BOOKMEISTER_BOOKMARK_ADMIN_BASE_PATH,
+      'file' => 'includes/bookmeister_bookmark.admin.inc',
+      'controller class' => 'BookmeisterBookmarkAdminUIController',
+    ),
+  );
+
+  return $entities;
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function bookmeister_bookmark_entity_presave($entity, $type) {
+  // Drupal 7 doesn't have built-in support a preSave on entities, so we
+  // call it manually.
+  if ($type === 'bookmeister_bookmark') {
+    $entity->preSave();
+  }
+}
+
+/**
+ * Access callback for news bookmark entities.
+ *
+ * @param string $op
+ *   The operation attempted, one of 'create', 'view', 'update' and 'delete'.
+ * @param CommitNewsletter $bookmark
+ *   The bookmark we are checking access for.
+ * @param mixed $account
+ *   The user we're checking access for. If not provided, check the
+ *   current user.
+ *
+ * @return boolean
+ *   TRUE if granting access, FALSE if not.
+ */
+function bookmeister_bookmark_access($op, $bookmark, $account = NULL) {
+  if (empty($account)) {
+    $account = $GLOBALS['user'];
+  }
+
+  if (user_access('administer bookmeister_bookmark entities')) {
+    return TRUE;
+  }
+
+  if (empty($bookmark)) {
+    return FALSE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Loads a bookmark by id.
+ *
+ * @param string $bookmark_id
+ *   The id of the bookmark to load.
+ *
+ * @return mixed
+ *   Entity object or FALSE if no entity could be loaded.
+ */
+function bookmeister_bookmark_load($bookmark_id) {
+  $bookmarks = bookmeister_bookmark_load_multiple(array($bookmark_id), array());
+
+  return !empty($bookmarks) ? reset($bookmarks) : FALSE;
+}
+
+/**
+ * Loads multiple bookmarks by id or based on a set of matching conditions.
+ *
+ * @see entity_load()
+ *
+ * @param array $bookmark_ids
+ *   An array of bookmark ids.
+ * @param array $conditions
+ *   An array of conditions on the {bookmeister_bookmarks} table in the form
+ *   'field' => $value.
+ * @param boolean $reset
+ *   Whether to reset the internal loading cache.
+ *
+ * @return array
+ *   An array of entity objects indexed by id.
+ */
+function bookmeister_bookmark_load_multiple($bookmark_ids = array(), $conditions = array(), $reset = FALSE) {
+  return entity_load('bookmeister_bookmark', $bookmark_ids, $conditions, $reset);
+}
+
+/**
+ * Deletes multiple bookmarks by id.
+ *
+ * @param array $bookmark_ids
+ *   An array of bookmark ids to delete.
+ *
+ * @return boolean
+ *   TRUE on success, FALSE otherwise.
+ */
+function bookmeister_bookmark_delete_multiple($bookmark_ids) {
+  return entity_get_controller('bookmeister_bookmark')->delete($bookmark_ids);
+}
