@@ -1,0 +1,12 @@
+name = Bookmeister frontend
+description = Frontend web-application for bookmarks management.
+core = 7.x
+package = Bookmeister
+dependencies[] = ctools
+dependencies[] = rest_server
+dependencies[] = services
+dependencies[] = services_entity
+dependencies[] = uuid_services
+features[ctools][] = services:services:3
+features[features_api][] = api:2
+features[services_endpoint][] = bookmeister_frontend

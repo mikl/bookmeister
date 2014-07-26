@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bookmeister frontend feature.
+ */
+
+include_once 'bookmeister_frontend.features.inc';

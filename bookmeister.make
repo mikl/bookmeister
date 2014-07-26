@@ -21,6 +21,8 @@ projects[module_filter][version] = "1.8"
 
 projects[services][version] = "3.7"
 
+projects[services_entity][version] = "2.0-alpha7"
+
 projects[uuid][version] = "1.0-alpha5"
 
 projects[views][version] = "3.8"
