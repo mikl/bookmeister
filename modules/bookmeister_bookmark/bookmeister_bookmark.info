@@ -1,0 +1,6 @@
+name = Bookmeister bookmarks
+description = Bookmarks entity and administration views.
+core = 7.x
+package = Bookmeister
+dependencies[] = entity
+features[features_api][] = api:2

@@ -1,0 +1,71 @@
+<?php
+/**
+ * @file
+ * Set up schema for storing bookmarks.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function bookmeister_bookmark_schema() {
+  $schema = array();
+
+  $schema['bookmeister_bookmarks'] = array(
+    'description' => 'Storage for Bookmeister bookmarks',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Legacy numerical key to keep Drupal happy.',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'uuid' => array(
+        'description' => 'UUID for bookmark, used as primary reference for all other purposes.',
+        'type' => 'char',
+        'length' => 36,
+        'not null' => TRUE,
+      ),
+      'url' => array(
+        'description' => 'URL for the bookmark.',
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'Title for the bookmark.',
+        'type' => 'text',
+        'default' => '',
+      ),
+      'description' => array(
+        'description' => 'Description for the bookmark.',
+        'type' => 'text',
+        'default' => '',
+      ),
+      'added_at' => array(
+        'description' => 'Date and time the bookmark was added to our database.',
+        'type' => 'text',
+        'mysql_type' => 'datetime',
+        'pgsql_type' => 'timestamptz',
+        'not null' => TRUE,
+      ),
+      'created_at' => array(
+        'description' => 'Official creation date and time for the bookmark, according to the user.',
+        'type' => 'text',
+        'mysql_type' => 'datetime',
+        'pgsql_type' => 'timestamptz',
+        'not null' => TRUE,
+      ),
+      'updated_at' => array(
+        'description' => 'Update date and time for the bookmark, if altered since creation date.',
+        'type' => 'text',
+        'mysql_type' => 'datetime',
+        'pgsql_type' => 'timestamptz',
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'uuid' => array('uuid'),
+    ),
+  );
+
+  return $schema;
+}
