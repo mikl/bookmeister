@@ -1,7 +1,49 @@
 <?php
 /**
  * @file
- * Code for the Bookmeister frontend feature.
+ * Code for the Bookmeister frontend module.
  */
+
+/**
+ * Implements hook_menu().
+ */
+function bookmeister_frontend_menu() {
+  $items = array();
+
+  $items['bookmeister_frontend'] = array(
+    'title' => 'Bookmarks',
+    'page callback' => 'bookmeister_frontend_main_page',
+    'access callback' => TRUE,
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'bookmeister_frontend.pages.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_library().
+ */
+function bookmeister_frontend_library() {
+  $libraries = array();
+
+  $path = drupal_get_path('module', 'bookmeister_frontend');
+
+  $libraries['bookmeister_frontend'] = array(
+    'title' => 'Bookmeister frontend',
+    'version' => '',
+    'css' => array(
+      $path . '/css/bookmeister_frontend.css' => array(),
+    ),
+    'js' => array(
+      $path . '/js/bookmeister_frontend.js' => array(),
+    ),
+    'dependencies' => array(
+      array('system', 'jquery'),
+    ),
+  );
+
+  return $libraries;
+}
 
 include_once 'bookmeister_frontend.features.inc';
