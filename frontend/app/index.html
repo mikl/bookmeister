@@ -3,24 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Frontend</title>
+    <title>Bookmeister</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     {{BASE_TAG}}
 
     <link rel="stylesheet" href="assets/vendor.css">
-    <link rel="stylesheet" href="assets/frontend.css">
+    <link rel="stylesheet" href="assets/bookmeister.css">
   </head>
   <body>
     <script>
-      window.FrontendENV = {{ENV}};
-      window.EmberENV = window.FrontendENV.EmberENV;
+      window.BookmeisterENV = {{ENV}};
+      window.EmberENV = window.BookmeisterENV.EmberENV;
     </script>
     <script src="assets/vendor.js"></script>
-    <script src="assets/frontend.js"></script>
+    <script src="assets/bookmeister.js"></script>
     <script>
-      window.Frontend = require('frontend/app')['default'].create(FrontendENV.APP);
+      window.Bookmeister = require('bookmeister/app')['default'].create(BookmeisterENV.APP);
     </script>
   </body>
 </html>

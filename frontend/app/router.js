@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 var Router = Ember.Router.extend({
-  location: FrontendENV.locationType
+  location: BookmeisterENV.locationType
 });
 
 Router.map(function() {

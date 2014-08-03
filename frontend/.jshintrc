@@ -2,7 +2,7 @@
   "predef": {
     "document": true,
     "window": true,
-    "FrontendENV": true
+    "BookmeisterENV": true
   },
   "browser" : true,
   "boss" : true,
