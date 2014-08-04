@@ -2,7 +2,9 @@
 <ul class="bookmark-list">
   {{#each controller}}
     <li>
-      <a {{bind-attr href="url"}}>{{url}}</a>
+      {{#link-to 'bookmarks.bookmark' this}}
+        {{url}}
+      {{/link-to}}
     </li>
   {{/each}}
 </ul>

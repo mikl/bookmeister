@@ -4,7 +4,7 @@ var Bookmark = DS.Model.extend({
   url: DS.attr('string'),
 });
 
-Bookmark.reopenClass({ 
+Bookmark.reopenClass({
   FIXTURES: [
     { id: 1, url: 'http://mikkel.hoegh.org/' },
     { id: 2, url: 'http://hoegh.io/' },
