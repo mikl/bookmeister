@@ -1,3 +1,13 @@
-No bookmarks found.
+{{#if controller.length}}
+<ul class="bookmark-list">
+  {{#each controller}}
+    <li>
+      <a {{bind-attr href="url"}}>{{url}}</a>
+    </li>
+  {{/each}}
+</ul>
+{{/if}}
+
+{{controller.length}} bookmarks found.
 
 {{outlet}}
