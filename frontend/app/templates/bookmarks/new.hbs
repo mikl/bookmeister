@@ -1,1 +1,22 @@
-Stub page for new bookmark form.
+<form class="bookmark-new-form">
+  <div class="header">
+    <h2>Add new bookmark</h2>
+  </div>
+
+  <div class="content">
+    <label>
+      URL
+      {{input valueBinding="url" class="url"}}
+    </label>
+  </div>
+
+  <div class="footer">
+    <button {{action 'saveBookmark'}} class="primary-action save">
+      Save new zone
+    </button>
+
+    <button {{action 'cancel'}} class="cancel">
+      Cancel
+    </button>
+  </div>
+</form>
