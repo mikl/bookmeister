@@ -1,7 +1,11 @@
 {
   "predef": {
+    // Browser-defined.
     "document": true,
     "window": true,
+    // JavaScript libraries.
+    "moment": true,
+    // Our own objects.
     "BookmeisterENV": true
   },
   "browser" : true,
