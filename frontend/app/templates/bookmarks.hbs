@@ -12,10 +12,18 @@
 
 {{controller.length}} bookmarks found.
 
-<div>
-  {{#link-to 'bookmarks.new'}}
-    Create new bookmark
-  {{/link-to}}
+<form class="new-bookmark-form">
+  <h4>Add new bookmark</h4>
+
+  <label class="url">
+    URL
+    {{input valueBinding="newBookmarkURL" class="url" type="url"}}
+  </label>
+
+  <br />
+  <button {{action 'saveNewBookmark'}} class="primary-action save">
+    Save new bookmark
+  </button>
 </div>
 
 {{outlet}}
