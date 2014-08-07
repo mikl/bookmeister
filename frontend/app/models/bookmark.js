@@ -11,7 +11,15 @@ var Bookmark = DS.Model.extend({
   createdAt: DS.attr('date', {
     defaultValue: function() { return moment().format(); }
   }),
-  updatedAt: DS.attr('date')
+  updatedAt: DS.attr('date'),
+
+  displayName: function() {
+    if (this.get('title')) {
+      return this.get('title');
+    }
+
+    return this.get('url');
+  }.property('url', 'title')
 });
 
 Bookmark.reopenClass({
