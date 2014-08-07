@@ -16,6 +16,8 @@ export default Ember.ArrayController.extend({
 
         // Reset the input field to prevent double posts.
         this.set('newBookmarkURL', '');
+
+        this.transitionToRoute('bookmarks.bookmark', bookmark.get('id'));
       }
     }
   }
