@@ -16,9 +16,9 @@ var Bookmark = DS.Model.extend({
 
 Bookmark.reopenClass({
   FIXTURES: [
-    { id: 1, url: 'http://mikkel.hoegh.org/' },
-    { id: 2, url: 'http://hoegh.io/' },
-    { id: 3, url: 'http://rhabarberbarbarabarbarbarenbartbarbierbierbar.com/' }
+    { id: 1, url: 'http://mikkel.hoegh.org/', title: "Mikkel Høgh" },
+    { id: 2, url: 'http://hoegh.io/', title: "Högh I+O" },
+    { id: 3, url: 'http://rhabarberbarbarabarbarbarenbartbarbierbierbar.com/', title: "Rhabarberbarbara" }
   ]
 });
 
