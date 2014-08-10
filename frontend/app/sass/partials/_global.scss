@@ -1,11 +1,17 @@
 // Page/sidewide styling. HTML elements, headers, footers and other
 // common things.
 
+@import "compass/typography/links/link-colors";
+
 body {
   background-color: $white;
   color: $black;
   margin: 0;
   padding: 0;
+}
+
+a {
+  @include link-colors($link, $hover);
 }
 
 .site-header {

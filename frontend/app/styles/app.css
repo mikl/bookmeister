@@ -1,4 +1,4 @@
-/* line 4, ../sass/partials/_global.scss */
+/* line 6, ../sass/partials/_global.scss */
 body {
   background-color: #f1f4f3;
   color: #0c0e0d;
@@ -6,7 +6,16 @@ body {
   padding: 0;
 }
 
-/* line 11, ../sass/partials/_global.scss */
+/* line 13, ../sass/partials/_global.scss */
+a {
+  color: #299482;
+}
+/* line 24, ../../../../../../../gems/gems/compass-core-1.0.0.rc.1/stylesheets/compass/typography/links/_link-colors.scss */
+a:hover {
+  color: #4ca495;
+}
+
+/* line 17, ../sass/partials/_global.scss */
 .site-header {
   background-color: #15c1a4;
   color: white;
@@ -19,7 +28,7 @@ body {
   clear: both;
 }
 
-/* line 19, ../sass/partials/_global.scss */
+/* line 25, ../sass/partials/_global.scss */
 main {
   padding: 1rem;
 }
