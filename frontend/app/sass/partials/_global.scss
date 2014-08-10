@@ -1,4 +1,21 @@
+// Page/sidewide styling. HTML elements, headers, footers and other
+// common things.
+
 body {
   background-color: $white;
   color: $black;
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  @include clearfix(true);
+
+  background-color: $identity-color;
+  color: white;
+  padding: 1rem;
+}
+
+main {
+  padding: 1rem;
 }

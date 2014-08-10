@@ -1,5 +1,25 @@
-/* line 1, ../sass/partials/_global.scss */
+/* line 4, ../sass/partials/_global.scss */
 body {
   background-color: #f1f4f3;
   color: #0c0e0d;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 11, ../sass/partials/_global.scss */
+.site-header {
+  background-color: #15c1a4;
+  color: white;
+  padding: 1rem;
+}
+/* line 13, ../../../../../../../gems/gems/toolkit-2.5.2/stylesheets/toolkit/_clearfix.scss */
+.site-header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 19, ../sass/partials/_global.scss */
+main {
+  padding: 1rem;
 }

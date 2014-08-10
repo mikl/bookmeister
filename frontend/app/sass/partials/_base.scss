@@ -9,9 +9,20 @@
 //////////////////////////////
 
 $identity-hue:    170;
-$identity-color:  hsl($identity-hue, 100%, 25%);
+$identity-color:  hsl($identity-hue, 80%, 42%);
 
 $white          : hsl($identity-hue, 10%, 95%);
 $black          : hsl($identity-hue, 7%, 5%);
 $blacker        : hsl($identity-hue, 5%, 3%);
+
+// Base color variables.
+$link           : hsl($identity-hue, 57%, 37%);
+$visited        : $link;
+$selection-bg   : $identity-color;
+$selection      : $white;
+$light-grey     : hsl($identity-hue, 5%, 93%);
+$medium-grey    : hsl($identity-hue, 5%, 73%);
+$dark-grey      : hsl($identity-hue, 9%, 37%);
+$firebrick      : #b22222;
+$amber          : #ff7e00;
 
