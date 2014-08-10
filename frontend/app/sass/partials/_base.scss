@@ -1,0 +1,16 @@
+//////////////////////////////
+// Imports
+//////////////////////////////
+@import "singularitygs";
+
+//////////////////////////////
+// Configuration and variables
+//////////////////////////////
+
+$identity-hue:    170;
+$identity-color:  hsl($identity-hue, 100%, 25%);
+
+$white          : hsl($identity-hue, 10%, 95%);
+$black          : hsl($identity-hue, 7%, 5%);
+$blacker        : hsl($identity-hue, 5%, 3%);
+
