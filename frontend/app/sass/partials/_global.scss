@@ -16,13 +16,19 @@ a {
 }
 
 .site-header {
-  @include clearfix(true);
-
   background-color: $identity-color;
   color: white;
-  padding: 1rem;
+}
+
+.site-header-content {
+  @extend %centered-content;
+  @include clearfix(true);
+
+  h1 {
+    margin: 0;
+  }
 }
 
 main {
-  padding: 1rem;
+  @extend %centered-content;
 }

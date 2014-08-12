@@ -1,3 +1,10 @@
+/* line 1, ../sass/partials/_extendables.scss */
+.site-header-content, main {
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1rem 1.5rem;
+}
+
 /* line 6, ../sass/partials/_global.scss */
 body {
   background-color: #f1f4f3;
@@ -7,7 +14,7 @@ body {
   padding: 0;
 }
 
-/* line 13, ../sass/partials/_global.scss */
+/* line 14, ../sass/partials/_global.scss */
 a {
   color: #299482;
 }
@@ -16,20 +23,19 @@ a:hover {
   color: #4ca495;
 }
 
-/* line 17, ../sass/partials/_global.scss */
+/* line 18, ../sass/partials/_global.scss */
 .site-header {
   background-color: #15c1a4;
   color: white;
-  padding: 1rem;
 }
+
 /* line 13, ../../../../../../../gems/gems/toolkit-2.5.2/stylesheets/toolkit/_clearfix.scss */
-.site-header:after {
+.site-header-content:after {
   content: "";
   display: table;
   clear: both;
 }
-
-/* line 25, ../sass/partials/_global.scss */
-main {
-  padding: 1rem;
+/* line 27, ../sass/partials/_global.scss */
+.site-header-content h1 {
+  margin: 0;
 }
