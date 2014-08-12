@@ -8,6 +8,13 @@
 // Configuration and variables
 //////////////////////////////
 
+
+// Font stacks
+$helvetica: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$fira-sans: "Fira Sans", $helvetica;
+
+
+// Colours
 $identity-hue:    170;
 $identity-color:  hsl($identity-hue, 80%, 42%);
 
@@ -15,7 +22,6 @@ $white          : hsl($identity-hue, 10%, 95%);
 $black          : hsl($identity-hue, 7%, 5%);
 $blacker        : hsl($identity-hue, 5%, 3%);
 
-// Base color variables.
 $link           : hsl($identity-hue, 57%, 37%);
 $hover          : hsl($identity-hue, 37%, 47%);
 $visited        : $link;
