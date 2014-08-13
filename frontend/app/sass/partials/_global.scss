@@ -24,6 +24,11 @@ a {
   h1 {
     @include single-text-shadow(rgba($black, 0.5), 1px, 1px, 1px);
     margin: 0;
+
+    a {
+      color: $white;
+      text-decoration: none;
+    }
   }
 }
 

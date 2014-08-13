@@ -40,8 +40,13 @@ a:hover {
   text-shadow: 1px 1px 1px rgba(5, 48, 41, 0.5);
   margin: 0;
 }
+/* line 28, ../sass/partials/_global.scss */
+.site-header-content h1 a {
+  color: #f3fbfa;
+  text-decoration: none;
+}
 
-/* line 30, ../sass/partials/_global.scss */
+/* line 35, ../sass/partials/_global.scss */
 .main-container {
   -moz-border-radius-bottomleft: 0.5rem;
   -webkit-border-bottom-left-radius: 0.5rem;
@@ -56,7 +61,7 @@ a:hover {
   color: #053029;
 }
 
-/* line 39, ../sass/partials/_global.scss */
+/* line 44, ../sass/partials/_global.scss */
 .main-column {
   width: 64.58333%;
   float: left;
@@ -65,7 +70,7 @@ a:hover {
   clear: none;
 }
 
-/* line 43, ../sass/partials/_global.scss */
+/* line 48, ../sass/partials/_global.scss */
 .sidebar-column {
   width: 31.25%;
   float: right;
@@ -74,16 +79,16 @@ a:hover {
   clear: none;
 }
 
-/* line 48, ../sass/partials/_global.scss */
+/* line 53, ../sass/partials/_global.scss */
 form > label {
   display: block;
   margin-bottom: 0.5rem;
 }
-/* line 52, ../sass/partials/_global.scss */
+/* line 57, ../sass/partials/_global.scss */
 form > label .ember-text-field {
   margin-left: 1em;
 }
-/* line 56, ../sass/partials/_global.scss */
+/* line 61, ../sass/partials/_global.scss */
 form > label textarea {
   display: block;
 }
