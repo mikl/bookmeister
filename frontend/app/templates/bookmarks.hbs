@@ -1,15 +1,19 @@
-<form class="new-bookmark-form">
-  <h4>Add new bookmark</h4>
+<main class="main-column">
+  {{outlet}}
+</main>
 
-  <label class="url">
-    URL
-    {{input valueBinding="newBookmarkURL" class="url" type="url"}}
-  </label>
+<div class="sidebar-column">
+  <form class="new-bookmark-form">
+    <h4>Add new bookmark</h4>
 
-  <br />
-  <button {{action 'saveNewBookmark'}} class="primary-action save">
-    Save new bookmark
-  </button>
-</form>
+    <label class="url">
+      URL
+      {{input valueBinding="newBookmarkURL" class="url" type="url"}}
+    </label>
 
-{{outlet}}
+    <br />
+    <button {{action 'saveNewBookmark'}} class="primary-action save">
+      Save new bookmark
+    </button>
+  </form>
+</div>

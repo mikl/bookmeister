@@ -1,8 +1,14 @@
 /* line 1, ../sass/partials/_extendables.scss */
-.site-header-content, main {
+.site-header-content, .main-container {
   margin: 0 auto;
   max-width: 960px;
   padding: 1rem 1.5rem;
+}
+/* line 13, ../../../../../../../gems/gems/toolkit-2.5.2/stylesheets/toolkit/_clearfix.scss */
+.site-header-content:after, .main-container:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* line 4, ../sass/partials/_global.scss */
@@ -29,20 +35,14 @@ a:hover {
   color: #f3fbfa;
 }
 
-/* line 13, ../../../../../../../gems/gems/toolkit-2.5.2/stylesheets/toolkit/_clearfix.scss */
-.site-header-content:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* line 25, ../sass/partials/_global.scss */
+/* line 24, ../sass/partials/_global.scss */
 .site-header-content h1 {
   text-shadow: 1px 1px 1px rgba(5, 48, 41, 0.5);
   margin: 0;
 }
 
-/* line 31, ../sass/partials/_global.scss */
-main {
+/* line 30, ../sass/partials/_global.scss */
+.main-container {
   -moz-border-radius-bottomleft: 0.5rem;
   -webkit-border-bottom-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -54,4 +54,22 @@ main {
   box-shadow: 0 1px 5px rgba(5, 48, 41, 0.3);
   background-color: #f3fbfa;
   color: #053029;
+}
+
+/* line 39, ../sass/partials/_global.scss */
+.main-column {
+  width: 64.58333%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 1.04167%;
+  clear: none;
+}
+
+/* line 43, ../sass/partials/_global.scss */
+.sidebar-column {
+  width: 31.25%;
+  float: right;
+  margin-left: 0;
+  margin-right: 1.04167%;
+  clear: none;
 }
