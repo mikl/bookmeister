@@ -1,17 +1,3 @@
-{{#if controller.length}}
-<ul class="bookmark-list">
-  {{#each controller}}
-    <li>
-      {{#link-to 'bookmarks.edit' this}}
-        {{displayName}}
-      {{/link-to}}
-    </li>
-  {{/each}}
-</ul>
-{{/if}}
-
-{{controller.length}} bookmarks found.
-
 <form class="new-bookmark-form">
   <h4>Add new bookmark</h4>
 
