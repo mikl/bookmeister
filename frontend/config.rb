@@ -1,6 +1,7 @@
 # Configuration file for Sass/Compass.
 #
 # Require any additional compass plugins here.
+require 'color-schemer'
 require 'singularitygs'
 require 'toolkit'
 

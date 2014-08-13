@@ -1,6 +1,8 @@
 //////////////////////////////
 // Imports
 //////////////////////////////
+@import 'color-schemer';
+@import "compass/typography";
 @import "singularitygs";
 @import "toolkit";
 
@@ -18,16 +20,15 @@ $fira-sans: "Fira Sans", $helvetica;
 $identity-hue:    170;
 $identity-color:  hsl($identity-hue, 80%, 42%);
 
-$white          : hsl($identity-hue, 10%, 95%);
-$black          : hsl($identity-hue, 7%, 5%);
-$blacker        : hsl($identity-hue, 5%, 3%);
+$white          : tint($identity-color, 95%);
+$black          : shade($identity-color, 75%);
 
 $link           : hsl($identity-hue, 57%, 37%);
 $hover          : hsl($identity-hue, 37%, 47%);
 $visited        : $link;
 $selection-bg   : $identity-color;
 $selection      : $white;
-$light-grey     : hsl($identity-hue, 5%, 93%);
+$light-grey     : tint($identity-color, 85%);
 $medium-grey    : hsl($identity-hue, 5%, 73%);
 $dark-grey      : hsl($identity-hue, 9%, 37%);
 $firebrick      : #b22222;
