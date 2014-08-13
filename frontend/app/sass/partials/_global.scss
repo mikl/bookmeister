@@ -23,12 +23,15 @@ a {
   @include clearfix(true);
 
   h1 {
+    @include single-text-shadow(rgba($black, 0.5), 1px, 1px, 1px);
     margin: 0;
   }
 }
 
 main {
   @extend %centered-content;
+  @include border-bottom-radius(0.5rem);
+  @include single-box-shadow(rgba($black, 0.3), 0, 1px, 5px);
 
   background-color: $white;
   color: $black;

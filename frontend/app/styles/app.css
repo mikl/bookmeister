@@ -37,11 +37,21 @@ a:hover {
 }
 /* line 25, ../sass/partials/_global.scss */
 .site-header-content h1 {
+  text-shadow: 1px 1px 1px rgba(5, 48, 41, 0.5);
   margin: 0;
 }
 
-/* line 30, ../sass/partials/_global.scss */
+/* line 31, ../sass/partials/_global.scss */
 main {
+  -moz-border-radius-bottomleft: 0.5rem;
+  -webkit-border-bottom-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  -moz-border-radius-bottomright: 0.5rem;
+  -webkit-border-bottom-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  -moz-box-shadow: 0 1px 5px rgba(5, 48, 41, 0.3);
+  -webkit-box-shadow: 0 1px 5px rgba(5, 48, 41, 0.3);
+  box-shadow: 0 1px 5px rgba(5, 48, 41, 0.3);
   background-color: #f3fbfa;
   color: #053029;
 }
