@@ -43,3 +43,18 @@ a {
 .sidebar-column {
   @include grid-span(4, 9);
 }
+
+form {
+  > label {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    .ember-text-field {
+      margin-left: 1em;
+    }
+
+    textarea {
+      display: block;
+    }
+  }
+}

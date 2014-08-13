@@ -73,3 +73,17 @@ a:hover {
   margin-right: 1.04167%;
   clear: none;
 }
+
+/* line 48, ../sass/partials/_global.scss */
+form > label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+/* line 52, ../sass/partials/_global.scss */
+form > label .ember-text-field {
+  margin-left: 1em;
+}
+/* line 56, ../sass/partials/_global.scss */
+form > label textarea {
+  display: block;
+}
