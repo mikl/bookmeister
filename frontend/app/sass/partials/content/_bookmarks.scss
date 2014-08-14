@@ -1,0 +1,26 @@
+//////////////////////////////
+// Styling for the bookmarks section
+//////////////////////////////
+
+.bookmark-list {
+  @include no-bullets;
+
+  padding: 0;
+}
+
+.bookmeister-bookmark {
+  margin-bottom: 1rem;
+
+  .title {
+    text-decoration: none;
+  }
+
+  .metadata {
+    font-size: 0.8rem;
+
+    a {
+      @include link-colors($muted-link, $hover);
+      text-decoration: none;
+    }
+  }
+}

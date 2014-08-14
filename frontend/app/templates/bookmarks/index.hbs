@@ -1,10 +1,14 @@
 {{#if controller.length}}
 <ul class="bookmark-list">
   {{#each controller}}
-    <li>
-      {{#link-to 'bookmarks.edit' this}}
+    <li class="bookmeister-bookmark">
+      <a class="title" {{bind-attr href=url}}>
         {{displayName}}
-      {{/link-to}}
+      </a>
+
+      <div class="metadata">
+        {{#link-to 'bookmarks.edit' this}}edit{{/link-to}}
+      </div>
     </li>
   {{/each}}
 </ul>

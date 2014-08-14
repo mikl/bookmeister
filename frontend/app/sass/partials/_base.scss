@@ -28,6 +28,7 @@ $black          : shade($identity-color, 75%);
 $link           : hsl($identity-hue, 57%, 37%);
 $hover          : hsl($identity-hue, 37%, 47%);
 $visited        : $link;
+$muted-link     : hsl($identity-hue, 17%, 57%);
 $selection-bg   : $identity-color;
 $selection      : $white;
 $light-grey     : tint($identity-color, 85%);

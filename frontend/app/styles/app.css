@@ -92,3 +92,37 @@ form > label .ember-text-field {
 form > label textarea {
   display: block;
 }
+
+/* line 5, ../sass/partials/content/_bookmarks.scss */
+.bookmark-list {
+  list-style: none;
+  padding: 0;
+}
+/* line 11, ../../../../../../../gems/gems/compass-core-1.0.0.rc.1/stylesheets/compass/typography/lists/_bullets.scss */
+.bookmark-list li {
+  list-style-image: none;
+  list-style-type: none;
+  margin-left: 0;
+}
+
+/* line 11, ../sass/partials/content/_bookmarks.scss */
+.bookmeister-bookmark {
+  margin-bottom: 1rem;
+}
+/* line 14, ../sass/partials/content/_bookmarks.scss */
+.bookmeister-bookmark .title {
+  text-decoration: none;
+}
+/* line 18, ../sass/partials/content/_bookmarks.scss */
+.bookmeister-bookmark .metadata {
+  font-size: 0.8rem;
+}
+/* line 21, ../sass/partials/content/_bookmarks.scss */
+.bookmeister-bookmark .metadata a {
+  color: #7fa49e;
+  text-decoration: none;
+}
+/* line 24, ../../../../../../../gems/gems/compass-core-1.0.0.rc.1/stylesheets/compass/typography/links/_link-colors.scss */
+.bookmeister-bookmark .metadata a:hover {
+  color: #4ca495;
+}
