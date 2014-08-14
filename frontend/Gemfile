@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'sass', '~>3.3.0'
+gem 'breakpoint', '~> 2.5.0'
 gem 'color-schemer', '~> 0.2.8'
 gem 'compass', '~> 1.0.0.rc.1'
 gem 'singularitygs', '~> 1.3.0'
