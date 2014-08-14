@@ -3,6 +3,7 @@
 # Require any additional compass plugins here.
 require 'breakpoint'
 require 'color-schemer'
+require 'modular-scale'
 require 'singularitygs'
 require 'toolkit'
 

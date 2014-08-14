@@ -16,11 +16,37 @@ body {
   background-color: #dbf5f1;
   color: #053029;
   font-family: "Fira Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
+  font-size: 14px;
   margin: 0;
   padding: 0;
 }
 
-/* line 12, ../sass/partials/_global.scss */
+/* line 13, ../sass/partials/_global.scss */
+h5 {
+  font-size: 22.65248px;
+}
+
+/* line 14, ../sass/partials/_global.scss */
+h4 {
+  font-size: 28.81439px;
+}
+
+/* line 15, ../sass/partials/_global.scss */
+h3 {
+  font-size: 36.65248px;
+}
+
+/* line 16, ../sass/partials/_global.scss */
+h2 {
+  font-size: 46.62267px;
+}
+
+/* line 17, ../sass/partials/_global.scss */
+h1 {
+  font-size: 59.30495px;
+}
+
+/* line 19, ../sass/partials/_global.scss */
 a {
   color: #299482;
 }
@@ -29,24 +55,24 @@ a:hover {
   color: #4ca495;
 }
 
-/* line 16, ../sass/partials/_global.scss */
+/* line 23, ../sass/partials/_global.scss */
 .site-header {
   background-color: #15c1a4;
   color: #f3fbfa;
 }
 
-/* line 24, ../sass/partials/_global.scss */
+/* line 31, ../sass/partials/_global.scss */
 .site-header-content h1 {
   text-shadow: 1px 1px 1px rgba(5, 48, 41, 0.5);
   margin: 0;
 }
-/* line 28, ../sass/partials/_global.scss */
+/* line 35, ../sass/partials/_global.scss */
 .site-header-content h1 a {
   color: #f3fbfa;
   text-decoration: none;
 }
 
-/* line 35, ../sass/partials/_global.scss */
+/* line 42, ../sass/partials/_global.scss */
 .main-container {
   -moz-border-radius-bottomleft: 0.5rem;
   -webkit-border-bottom-left-radius: 0.5rem;
@@ -61,7 +87,7 @@ a:hover {
   color: #053029;
 }
 
-/* line 44, ../sass/partials/_global.scss */
+/* line 51, ../sass/partials/_global.scss */
 .main-column {
   width: 64.58333%;
   float: left;
@@ -70,7 +96,7 @@ a:hover {
   clear: none;
 }
 
-/* line 48, ../sass/partials/_global.scss */
+/* line 55, ../sass/partials/_global.scss */
 .sidebar-column {
   width: 31.25%;
   float: right;
@@ -79,16 +105,16 @@ a:hover {
   clear: none;
 }
 
-/* line 53, ../sass/partials/_global.scss */
+/* line 60, ../sass/partials/_global.scss */
 form > label {
   display: block;
   margin-bottom: 0.5rem;
 }
-/* line 57, ../sass/partials/_global.scss */
+/* line 64, ../sass/partials/_global.scss */
 form > label .ember-text-field {
   margin-left: 1em;
 }
-/* line 61, ../sass/partials/_global.scss */
+/* line 68, ../sass/partials/_global.scss */
 form > label textarea {
   display: block;
 }

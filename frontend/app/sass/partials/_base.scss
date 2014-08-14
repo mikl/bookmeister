@@ -5,6 +5,7 @@
 @import 'color-schemer';
 @import "compass/css3";
 @import "compass/typography";
+@import 'modular-scale';
 @import "singularitygs";
 @import "toolkit";
 
@@ -16,6 +17,11 @@
 // Font stacks
 $helvetica: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $fira-sans: "Fira Sans", $helvetica;
+
+
+// Font sizing with modular scale
+$ms-base: 14px;
+$ms-ratio: $golden;
 
 
 // Colours
