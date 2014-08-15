@@ -18,6 +18,10 @@
   .metadata {
     font-size: 0.8rem;
 
+    time {
+      color: $dark-grey;
+    }
+
     a {
       @include link-colors($muted-link, $hover);
       text-decoration: none;

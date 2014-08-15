@@ -144,6 +144,10 @@ form > label textarea {
   font-size: 0.8rem;
 }
 /* line 21, ../sass/partials/content/_bookmarks.scss */
+.bookmeister-bookmark .metadata time {
+  color: #566764;
+}
+/* line 25, ../sass/partials/content/_bookmarks.scss */
 .bookmeister-bookmark .metadata a {
   color: #7fa49e;
   text-decoration: none;
