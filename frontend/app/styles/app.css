@@ -23,27 +23,27 @@ body {
 
 /* line 13, ../sass/partials/_global.scss */
 h5 {
-  font-size: 22.65248px;
+  font-size: 1.2rem;
 }
 
 /* line 14, ../sass/partials/_global.scss */
 h4 {
-  font-size: 28.81439px;
+  font-size: 1.4rem;
 }
 
 /* line 15, ../sass/partials/_global.scss */
 h3 {
-  font-size: 36.65248px;
+  font-size: 1.6rem;
 }
 
 /* line 16, ../sass/partials/_global.scss */
 h2 {
-  font-size: 46.62267px;
+  font-size: 1.8rem;
 }
 
 /* line 17, ../sass/partials/_global.scss */
 h1 {
-  font-size: 59.30495px;
+  font-size: 2.0rem;
 }
 
 /* line 19, ../sass/partials/_global.scss */
@@ -137,19 +137,22 @@ form > label textarea {
 }
 /* line 14, ../sass/partials/content/_bookmarks.scss */
 .bookmeister-bookmark .title {
+  font-size: 1.1rem;
   text-decoration: none;
 }
-/* line 18, ../sass/partials/content/_bookmarks.scss */
+/* line 19, ../sass/partials/content/_bookmarks.scss */
 .bookmeister-bookmark .metadata {
   font-size: 0.8rem;
 }
-/* line 21, ../sass/partials/content/_bookmarks.scss */
+/* line 22, ../sass/partials/content/_bookmarks.scss */
 .bookmeister-bookmark .metadata time {
   color: #566764;
 }
-/* line 25, ../sass/partials/content/_bookmarks.scss */
+/* line 26, ../sass/partials/content/_bookmarks.scss */
 .bookmeister-bookmark .metadata a {
   color: #7fa49e;
+  display: inline-block;
+  padding-left: 0.5rem;
   text-decoration: none;
 }
 /* line 24, ../../../../../../../gems/gems/compass-core-1.0.0.rc.1/stylesheets/compass/typography/links/_link-colors.scss */

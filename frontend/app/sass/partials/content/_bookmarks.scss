@@ -12,6 +12,7 @@
   margin-bottom: 1rem;
 
   .title {
+    font-size: 1.1rem;
     text-decoration: none;
   }
 
@@ -24,6 +25,9 @@
 
     a {
       @include link-colors($muted-link, $hover);
+
+      display: inline-block;
+      padding-left: 0.5rem;
       text-decoration: none;
     }
   }

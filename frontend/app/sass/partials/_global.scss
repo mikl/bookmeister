@@ -5,16 +5,16 @@ body {
   background-color: $light-grey;
   color: $black;
   font-family: $fira-sans;
-  font-size: ms(0);
+  font-size: 14px;
   margin: 0;
   padding: 0;
 }
 
-h5 { font-size: ms(1); }
-h4 { font-size: ms(1.5); }
-h3 { font-size: ms(2); }
-h2 { font-size: ms(2.5); }
-h1 { font-size: ms(3); }
+h5 { font-size: 1.2rem; }
+h4 { font-size: 1.4rem;}
+h3 { font-size: 1.6rem; }
+h2 { font-size: 1.8rem; }
+h1 { font-size: 2.0rem; }
 
 a {
   @include link-colors($link, $hover);
