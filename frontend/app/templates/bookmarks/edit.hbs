@@ -18,7 +18,10 @@
     {{textarea valueBinding="description"}}
   </label>
 
-  <br />
+  <button {{action 'cancel'}} class="cancel">
+    Cancel
+  </button>
+
   <button {{action 'saveBookmark'}} class="primary-action save">
     Save bookmark
   </button>
