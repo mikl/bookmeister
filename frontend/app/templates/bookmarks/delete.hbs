@@ -1,4 +1,9 @@
 <h2>Delete bookmark {{displayName}}?</h2>
 
-<button>Cancel</button>
-<button>Confirm deletion</button>
+<button {{action 'cancel'}} class="cancel">
+  Cancel
+</button>
+
+<button {{action 'confirmDeletion'}} class="primary-action delete">
+  Confirm deletion
+</button>
