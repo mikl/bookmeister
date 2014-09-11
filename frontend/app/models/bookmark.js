@@ -26,7 +26,9 @@ Bookmark.reopenClass({
   FIXTURES: [
     { id: 1, url: 'http://mikkel.hoegh.org/', title: "Mikkel Høgh" },
     { id: 2, url: 'http://hoegh.io/', title: "Högh I+O" },
-    { id: 3, url: 'http://rhabarberbarbarabarbarbarenbartbarbierbierbar.com/', title: "Rhabarberbarbara" }
+    { id: 3, url: 'http://rhabarberbarbarabarbarbarenbartbarbierbierbar.com/', title: "Rhabarberbarbara" },
+    { id: 4, url: 'http://emberjs.com/', title: "Ember.js" },
+    { id: 5, url: 'http://drupal.org/', title: "Drupal" }
   ]
 });
 
