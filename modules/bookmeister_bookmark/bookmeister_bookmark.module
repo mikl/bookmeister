@@ -11,6 +11,11 @@ define('BOOKMEISTER_BOOKMARK_ADMIN_BASE_PATH', 'admin/content/bookmeister_bookma
  */
 function bookmeister_bookmark_permission() {
   return array(
+    'view bookmeister_bookmark entities' => array(
+      'title' => t('View Bookmeister bookmarks'),
+      'description' => t('Grants access to view any bookmark entities.'),
+    ),
+
     'administer bookmeister_bookmark entities' => array(
       'title' => t('Administer Bookmeister bookmarks'),
       'description' => t('Grants access to perform CRUD on any bookmark entities.'),
@@ -95,6 +100,10 @@ function bookmeister_bookmark_entity_presave($entity, $type) {
 function bookmeister_bookmark_access($op, $bookmark, $account = NULL) {
   if (empty($account)) {
     $account = $GLOBALS['user'];
+  }
+
+  if ($op == 'view' && user_access('view bookmeister_bookmark entities', $account)) {
+    return TRUE;
   }
 
   if (user_access('administer bookmeister_bookmark entities', $account)) {
