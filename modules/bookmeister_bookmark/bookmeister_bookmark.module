@@ -97,7 +97,7 @@ function bookmeister_bookmark_access($op, $bookmark, $account = NULL) {
     $account = $GLOBALS['user'];
   }
 
-  if (user_access('administer bookmeister_bookmark entities')) {
+  if (user_access('administer bookmeister_bookmark entities', $account)) {
     return TRUE;
   }
 
