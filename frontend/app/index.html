@@ -14,13 +14,12 @@
   </head>
   <body>
     <script>
-      window.BookmeisterENV = {{ENV}};
-      window.EmberENV = window.BookmeisterENV.EmberENV;
+      window.EmberENV = {{EMBER_ENV}};
     </script>
     <script src="assets/vendor.js"></script>
     <script src="assets/bookmeister.js"></script>
     <script>
-      window.Bookmeister = require('bookmeister/app')['default'].create(BookmeisterENV.APP);
+      window.Bookmeister = require('bookmeister/app')['default'].create({{APP_CONFIG}});
     </script>
   </body>
 </html>

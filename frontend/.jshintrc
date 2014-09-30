@@ -6,7 +6,8 @@
     // JavaScript libraries.
     "moment": true,
     // Our own objects.
-    "BookmeisterENV": true
+    "BookmeisterENV": true,
+    "-Promise": true
   },
   "browser" : true,
   "boss" : true,
