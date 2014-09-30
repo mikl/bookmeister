@@ -1,8 +1,6 @@
-<h4>Detail view for bookmark #{{id}}</h4>
+<h4>Editing bookmark {{displayName}}</h4>
 
 <form class="new-bookmark-form">
-  <h4>Add new bookmark</h4>
-
   <label class="url">
     URL
     {{input valueBinding="url" type="url"}}
@@ -13,7 +11,7 @@
     {{input valueBinding="title"}}
   </label>
 
-  <label class="title">
+  <label class="description">
     Description
     {{textarea valueBinding="description"}}
   </label>
