@@ -6,6 +6,7 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    bookmeisterServer: '',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -25,6 +26,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.bookmeisterServer = 'http://bookmeister.d7.hoegh.co:8080';
   }
 
   if (environment === 'test') {

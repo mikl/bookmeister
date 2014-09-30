@@ -1,4 +1,6 @@
 import DS from 'ember-data';
+import config from '../config/environment';
 
-// FIXME: Use the fixture adapter until we get a proper adapter done.
-export default DS.FixtureAdapter.extend({});
+export default DS.RESTAdapter.extend({
+  host: config.bookmeisterServer
+});
