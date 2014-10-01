@@ -5,6 +5,18 @@ export default DS.JSONSerializer.extend({
     return payload.list;
   },
 
+  extractDeleteRecord: function(store, type, payload, id, requestType) {
+    // RestWS sends an empty payload back on DELETE requests.
+    // Make sure it's not interpreted by returning nothing here.
+    return;
+  },
+
+  extractUpdateRecord: function(store, type, payload, id, requestType) {
+    // RestWS sends an empty payload back on PUT requests.
+    // Make sure it's not interpreted by returning nothing here.
+    return;
+  },
+
   extractSingle: function(store, type, payload) {
     return payload;
   },
