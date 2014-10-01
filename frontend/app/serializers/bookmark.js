@@ -7,5 +7,10 @@ export default DS.JSONSerializer.extend({
 
   extractSingle: function(store, type, payload) {
     return payload;
+  },
+
+  // Decamelize and lowercase keys sent to the server.
+  keyForAttribute: function (attr) {
+    return Ember.String.underscore(attr);
   }
 });
