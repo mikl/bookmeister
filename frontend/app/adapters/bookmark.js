@@ -9,10 +9,10 @@ export default ApplicationAdapter.extend({
       prefix = this.urlPrefix();
 
     if (Ember.$.isNumeric(id)) {
-      url.push('bookmeister_bookmark/' + parseInt(id, 10) + '.json');
+      url.push('bookmeister_bookmark/' + parseInt(id, 10));
     }
     else {
-      url.push('bookmeister_bookmark.json');
+      url.push('bookmeister_bookmark');
     }
 
 
