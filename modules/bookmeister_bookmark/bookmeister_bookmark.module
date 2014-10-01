@@ -73,6 +73,22 @@ function bookmeister_bookmark_entity_info() {
 }
 
 /**
+ * Implements hook_entity_property_info().
+ */
+function bookmeister_bookmark_entity_property_info_alter(&$info) {
+  $properties = &$info['bookmeister_bookmark']['properties'];
+
+  // Configure setters for all properties.
+  $properties['added_at']['setter callback'] = 'entity_property_verbatim_set';
+  $properties['created_at']['setter callback'] = 'entity_property_verbatim_set';
+  $properties['description']['setter callback'] = 'entity_property_verbatim_set';
+  $properties['title']['setter callback'] = 'entity_property_verbatim_set';
+  $properties['updated_at']['setter callback'] = 'entity_property_verbatim_set';
+  $properties['url']['setter callback'] = 'entity_property_verbatim_set';
+  $properties['uuid']['setter callback'] = 'entity_property_verbatim_set';
+}
+
+/**
  * Implements hook_entity_presave().
  */
 function bookmeister_bookmark_entity_presave($entity, $type) {
