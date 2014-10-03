@@ -1,0 +1,7 @@
+'view bookmeister_bookmark entities':
+  title: 'View Bookmeister bookmarks'
+  description: 'Grants access to view any bookmark entities.'
+'administer bookmeister_bookmark entities':
+  title: 'Administer Bookmeister bookmarks'
+  description: 'Grants access to perform CRUD on any bookmark entities.'
+  'restrict access': true

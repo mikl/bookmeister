@@ -7,24 +7,6 @@
 define('BOOKMEISTER_BOOKMARK_ADMIN_BASE_PATH', 'admin/content/bookmeister_bookmark');
 
 /**
- * Implements hook_permission().
- */
-function bookmeister_bookmark_permission() {
-  return array(
-    'view bookmeister_bookmark entities' => array(
-      'title' => t('View Bookmeister bookmarks'),
-      'description' => t('Grants access to view any bookmark entities.'),
-    ),
-
-    'administer bookmeister_bookmark entities' => array(
-      'title' => t('Administer Bookmeister bookmarks'),
-      'description' => t('Grants access to perform CRUD on any bookmark entities.'),
-      'restrict access' => TRUE,
-    ),
-  );
-}
-
-/**
  * Implements hook_entity_info().
  */
 function bookmeister_bookmark_entity_info() {
