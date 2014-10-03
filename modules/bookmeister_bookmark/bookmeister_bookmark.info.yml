@@ -1,0 +1,7 @@
+name: Bookmeister bookmarks
+description: Bookmarks entity and administration views.
+type: module
+core: 8.x
+package: Bookmeister
+dependencies:
+  - views
