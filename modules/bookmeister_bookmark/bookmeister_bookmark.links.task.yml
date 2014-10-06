@@ -1,0 +1,17 @@
+bookmeister_bookmark.settings_tab:
+  route_name: bookmeister_bookmark.settings
+  title: 'Settings'
+  base_route: bookmeister_bookmark.settings
+bookmeister_bookmark.view:
+  route_name: bookmeister_bookmark.view
+  base_route: bookmeister_bookmark.view
+  title: 'View'
+bookmeister_bookmark.page_edit:
+  route_name: bookmeister_bookmark.edit
+  base_route: bookmeister_bookmark.view
+  title: Edit
+bookmeister_bookmark.delete_confirm:
+  route_name: bookmeister_bookmark.delete
+  base_route: bookmeister_bookmark.view
+  title: Delete
+  weight: 10

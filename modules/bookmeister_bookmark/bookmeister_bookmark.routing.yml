@@ -1,0 +1,47 @@
+bookmeister_bookmark.view:
+  path: '/admin/content/bookmeister_bookmark/{bookmeister_bookmark}'
+  defaults:
+    _entity_view: 'bookmeister_bookmark'
+    _title: 'Bookbark'
+  requirements:
+    _permission: 'view_bookmeister_bookmark'
+
+bookmeister_bookmark.list:
+  path: '/admin/content/bookmeister_bookmark/list'
+  defaults:
+    _entity_list: 'bookmeister_bookmark'
+    _title: 'Bookmark List'
+  requirements:
+    _permission: 'view_bookmeister_bookmark'
+
+bookmeister_bookmark.add:
+  path: '/admin/content/bookmeister_bookmark/add'
+  defaults:
+    _entity_form: bookmeister_bookmark.add
+    _title: 'Add bookmark'
+  requirements:
+    _permission: 'add_bookmeister_bookmark'
+
+bookmeister_bookmark.edit:
+  path: '/admin/content/bookmeister_bookmark/{bookmeister_bookmark}/edit'
+  defaults:
+    _entity_form: bookmeister_bookmark.edit
+    _title: 'Edit bookmark'
+  requirements:
+    _permission: 'edit_bookmeister_bookmark'
+
+bookmeister_bookmark.delete:
+  path: '/admin/content/bookmeister_bookmark/{bookmeister_bookmark}/delete'
+  defaults:
+    _entity_form: bookmeister_bookmark.delete
+    _title: 'Delete bookmark '
+  requirements:
+    _permission: 'delete_bookmeister_bookmark'
+
+bookmeister_bookmark.settings:
+  path: 'admin/structure/bookmeister_bookmark_settings'
+  defaults:
+   _form: '\Drupal\bookmeister_bookmark\Entity\Form\FooBarSettingsForm'
+   _title: 'Bookmark settings'
+  requirements:
+    _permission: 'admin_bookmeister_bookmark'
