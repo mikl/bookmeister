@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Set up schema for storing bookmarks.
+ * Install, update and uninstall functions for Bookmeister Bookmark module.
  */
 
 /**
@@ -13,7 +13,7 @@ function bookmeister_bookmark_schema() {
   $schema['bookmeister_bookmarks'] = array(
     'description' => 'Storage for Bookmeister bookmarks',
     'fields' => array(
-      'id' => array(
+      'bookmark_id' => array(
         'description' => 'Legacy numerical key to keep Drupal happy.',
         'type' => 'serial',
         'unsigned' => TRUE,
@@ -33,12 +33,10 @@ function bookmeister_bookmark_schema() {
       'title' => array(
         'description' => 'Title for the bookmark.',
         'type' => 'text',
-        'default' => '',
       ),
       'description' => array(
         'description' => 'Description for the bookmark.',
         'type' => 'text',
-        'default' => '',
       ),
       'added_at' => array(
         'description' => 'Date and time the bookmark was added to our database.',
@@ -61,7 +59,7 @@ function bookmeister_bookmark_schema() {
         'pgsql_type' => 'timestamptz',
       ),
     ),
-    'primary key' => array('id'),
+    'primary key' => array('bookmark_id'),
     'unique keys' => array(
       'uuid' => array('uuid'),
     ),
