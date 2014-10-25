@@ -34,7 +34,7 @@ use Drupal\bookmeister_bookmark\BookmarkInterface;
  *   translatable = FALSE,
  *   entity_keys = {
  *     "id" = "bookmark_id",
- *     "label" = "name",
+ *     "label" = "title",
  *     "uuid" = "uuid"
  *   },
  *   links = {
