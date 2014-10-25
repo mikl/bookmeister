@@ -9,9 +9,11 @@ export default Ember.ObjectController.extend({
     },
 
     saveBookmark: function () {
-      this.get('model').save();
+      this.get('model').save()
+        .then(function () {
+          this.transitionToRoute('bookmarks');
+        }.bind(this));
 
-      this.transitionToRoute('bookmarks');
     }
   }
 });

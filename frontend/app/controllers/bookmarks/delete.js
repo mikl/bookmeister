@@ -7,13 +7,11 @@ export default Ember.ObjectController.extend({
     },
 
     confirmDeletion: function () {
-      var controller = this;
-
       this.get('model').deleteRecord();
       this.get('model').save()
         .then(function () {
-          controller.transitionToRoute('bookmarks');
-        });
+          this.transitionToRoute('bookmarks');
+        }.bind(this));
 
     }
   }
