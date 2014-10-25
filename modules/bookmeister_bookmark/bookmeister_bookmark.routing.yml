@@ -39,7 +39,7 @@ bookmeister_bookmark.delete:
     _permission: 'delete_bookmeister_bookmark'
 
 bookmeister_bookmark.settings:
-  path: 'admin/structure/bookmeister_bookmark_settings'
+  path: '/admin/structure/bookmeister_bookmark_settings'
   defaults:
    _form: '\Drupal\bookmeister_bookmark\Entity\Form\FooBarSettingsForm'
    _title: 'Bookmark settings'
