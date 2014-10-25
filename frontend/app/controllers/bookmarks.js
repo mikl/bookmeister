@@ -15,6 +15,11 @@ export default Ember.Controller.extend({
 
         // Save, and when that succeeds, proceed to edit the bookmark.
         bookmark.save().then(function (newBm) {
+          // Workaround: due to Drupal's RestWS module returning a half-empty
+          // object, which confuses Ember Data into removing all the properties,
+          // force a reload of the object.
+          newBm.reload();
+
           this.transitionToRoute('bookmarks.edit', newBm.get('id'));
         }.bind(this));
 
