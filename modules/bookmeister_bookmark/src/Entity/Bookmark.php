@@ -106,6 +106,27 @@ class Bookmark extends ContentEntityBase implements BookmarkInterface {
       ->setLabel(t('Description'))
       ->setDescription(t('Description for the bookmark.'));
 
+    $fields['added_at'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Added at'));
+
+    $fields['created_at'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Created at'));
+
+    $fields['updated_at'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Updated at'));
+
     return $fields;
+  }
+  /**
+   * {@inheritdoc}
+   */
+  public static function preCreate(EntityStorageInterface $storage, array &$values) {
+    // added_at is always when the entity was created.
+    $values['added_at'] = date('Y-m-d\TH:i:s', REQUEST_TIME);
+
+    // If not provided by caller, created_at gets set to the same value.
+    if (empty($values['created_at'])) {
+      $values['created_at'] = $values['added_at'];
+    }
   }
 }
