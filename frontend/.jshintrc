@@ -1,16 +1,11 @@
 {
-  "predef": {
-    // Browser-defined.
-    "document": true,
-    "window": true,
-    // JavaScript libraries.
-    "moment": true,
-    // Our own objects.
-    "BookmeisterENV": true,
-    "-Promise": true
-  },
-  "browser" : true,
-  "boss" : true,
+  "predef": [
+    "document",
+    "window",
+    "-Promise"
+  ],
+  "browser": true,
+  "boss": true,
   "curly": true,
   "debug": false,
   "devel": true,
