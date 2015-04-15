@@ -17,7 +17,7 @@ use Drupal\bookmeister_bookmark\BookmarkInterface;
  *
  * @ContentEntityType(
  *   id = "bookmeister_bookmark",
- *   label = @Translation("Bookmark entity"),
+ *   label = @Translation("Bookmark"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\bookmeister_bookmark\Entity\Controller\BookmarkListBuilder",
