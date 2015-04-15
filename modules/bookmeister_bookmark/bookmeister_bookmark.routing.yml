@@ -1,3 +1,12 @@
+bookmeister_bookmark.admin:
+  path: '/admin/content/bookmeister_bookmark'
+  defaults:
+    _title: 'Bookmarks'
+    _controller: '\Drupal\bookmeister_bookmark\Controller\AdminController::adminPage'
+    type: 'new'
+  requirements:
+    _permission: 'view_bookmeister_bookmark'
+
 bookmeister_bookmark.view:
   path: '/admin/content/bookmeister_bookmark/{bookmeister_bookmark}'
   defaults:
@@ -7,7 +16,7 @@ bookmeister_bookmark.view:
     _permission: 'view_bookmeister_bookmark'
 
 bookmeister_bookmark.list:
-  path: '/admin/content/bookmeister_bookmark/list'
+  path: '/admin/content/bookmeister_bookmark'
   defaults:
     _entity_list: 'bookmeister_bookmark'
     _title: 'Bookmark List'

@@ -1,0 +1,5 @@
+bookmeister_bookmark.admin:
+  title: Bookmarks
+  route_name: bookmeister_bookmark.admin
+  parent: system.admin_content
+  description: 'List and edit bookmarks.'
