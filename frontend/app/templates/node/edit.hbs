@@ -1,3 +1,6 @@
 <h2>Editing “{{model.title}}”</h2>
 
 {{node-edit node=model}}
+
+<button {{action 'save' model}} class="primary-action save">Save</button>
+<button {{action 'cancel' model}} class="cancel">Cancel</button>
