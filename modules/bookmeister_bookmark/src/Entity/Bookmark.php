@@ -20,12 +20,13 @@ use Drupal\bookmeister_bookmark\BookmarkInterface;
  *   label = @Translation("Bookmark"),
  *   handlers = {
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
- *     "list_builder" = "Drupal\bookmeister_bookmark\Entity\Controller\BookmarkListBuilder",
+ *     "list_builder" = "Drupal\bookmeister_bookmark\Controller\BookmarkListBuilder",
  *
  *     "form" = {
- *       "add" = "Drupal\bookmeister_bookmark\Entity\Form\BookmarkFormController",
- *       "edit" = "Drupal\bookmeister_bookmark\Entity\Form\BookmarkFormController",
- *       "delete" = "Drupal\bookmeister_bookmark\Entity\Form\BookmarkDeleteForm",
+ *       "default" = "Drupal\bookmeister_bookmark\Form\BookmarkFormController",
+ *       "add" = "Drupal\bookmeister_bookmark\Form\BookmarkFormController",
+ *       "edit" = "Drupal\bookmeister_bookmark\Form\BookmarkFormController",
+ *       "delete" = "Drupal\bookmeister_bookmark\Form\BookmarkDeleteForm",
  *     }
  *   },
  *   base_table = "bookmeister_bookmarks",

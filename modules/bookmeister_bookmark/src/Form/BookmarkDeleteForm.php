@@ -1,9 +1,9 @@
 <?php
 /**
  * @file
- * Contains \Drupal\bookmeister_bookmark\Entity\Form\BookmarkDeleteForm
+ * Contains \Drupal\bookmeister_bookmark\Form\BookmarkDeleteForm
  */
-namespace Drupal\bookmeister_bookmark\Entity\Form;
+namespace Drupal\bookmeister_bookmark\Form;
 use Drupal\Core\Entity\ContentEntityConfirmFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Url;

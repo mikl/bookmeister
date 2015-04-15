@@ -1,9 +1,9 @@
 <?php
 /**
  * @file
- * Defines Drupal\bookmeister_bookmark\Entity\Form\BookmarkSettingsForm.
+ * Defines Drupal\bookmeister_bookmark\Form\BookmarkSettingsForm.
  */
-namespace Drupal\bookmeister_bookmark\Entity\Form;
+namespace Drupal\bookmeister_bookmark\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 class BookmarkSettingsForm extends FormBase {

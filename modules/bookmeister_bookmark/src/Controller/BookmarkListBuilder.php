@@ -1,9 +1,9 @@
 <?php
 /**
  * @file
- * Contains \Drupal\bookmeister_bookmark\Entity\Controller\BookmarkListBuilder.
+ * Contains \Drupal\bookmeister_bookmark\Controller\BookmarkListBuilder.
  */
-namespace Drupal\bookmeister_bookmark\Entity\Controller;
+namespace Drupal\bookmeister_bookmark\Controller;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
 /**

@@ -1,15 +1,13 @@
 <?php
 /**
  * @file
- * Definition of Drupal\foo_bar\Entity\Form\FooBarFormController.
+ * Definition of Drupal\foo_bar\Form\FooBarFormController.
  */
 
-namespace Drupal\bookmeister_bookmark\Entity\Form;
+namespace Drupal\bookmeister_bookmark\Form;
 
 use Drupal\Core\Entity\ContentEntityForm;
-use Drupal\Core\Language\Language;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Url;
 
 /**
  * Form controller for editing Bookmark entities.
