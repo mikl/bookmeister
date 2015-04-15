@@ -22,7 +22,7 @@ export default DS.RESTSerializer.extend({
     }
 
     // Single-value fields.
-    let fieldNames = ['vid', 'uuid', 'type', 'title', 'uid', 'created', 'changed'];
+    let fieldNames = ['vid', 'uuid', 'type', 'title', 'uid', 'created', 'changed', 'body'];
     fieldNames.forEach(function (fieldName) {
       // If the value is stored as `value`.
       if (payload[fieldName] && payload[fieldName][0] && payload[fieldName][0].value) {
