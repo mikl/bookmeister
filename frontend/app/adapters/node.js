@@ -2,6 +2,8 @@ import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
   ajax: function (url, type, options) {
+    options = options || {};
+
     // Instruct the browser to pass cookies along via CORS, so we can piggyback
     // on the standard Drupal login.
     options.xhrFields = { withCredentials: true };
