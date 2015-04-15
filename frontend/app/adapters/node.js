@@ -1,6 +1,14 @@
 import ApplicationAdapter from './application';
 
 export default ApplicationAdapter.extend({
+  ajax: function (url, type, options) {
+    // Instruct the browser to pass cookies along via CORS, so we can piggyback
+    // on the standard Drupal login.
+    options.xhrFields = { withCredentials: true };
+
+    return this._super(url, type, options);
+  },
+
   buildURL: function (type, id, record) {
     var url = [],
       host = Ember.get(this, 'host'),
