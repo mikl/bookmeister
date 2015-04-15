@@ -10,9 +10,9 @@ export default ApplicationAdapter.extend({
   },
 
   buildURL: function (type, id, record) {
-    var url = [],
-      host = Ember.get(this, 'host'),
-      prefix = this.urlPrefix();
+    let url = [];
+    let host = this.get('host');
+    let prefix = this.urlPrefix();
 
     if (Ember.$.isNumeric(id)) {
       url.push('node/' + parseInt(id, 10));
