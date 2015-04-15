@@ -38,10 +38,10 @@ use Drupal\bookmeister_bookmark\BookmarkInterface;
  *     "uuid" = "uuid"
  *   },
  *   links = {
- *     "canonical" = "bookmeister_bookmark.view",
- *     "edit-form" = "bookmeister_bookmark.edit",
- *     "admin-form" = "bookmeister_bookmark.settings",
- *     "delete-form" = "bookmeister_bookmark.delete"
+ *     "canonical" = "/admin/content/bookmeister_bookmark/{bookmeister_bookmark}",
+ *     "admin-form" = "/admin/content/bookmeister_bookmark",
+ *     "delete-form" = "/admin/content/bookmeister_bookmark/{bookmeister_bookmark}/delete",
+ *     "edit-form" = "/admin/content/bookmeister_bookmark/{bookmeister_bookmark}/edit",
  *   }
  * )
  */
