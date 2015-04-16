@@ -27,6 +27,10 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.bookmeisterServer = 'http://d8.d8.hoegh.co:8080';
+
+    ENV.contentSecurityPolicy = {
+      'connect-src': "'self' http://d8.d8.hoegh.co:8080 http://localhost:35729"
+    };
   }
 
   if (environment === 'test') {
