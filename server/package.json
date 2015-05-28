@@ -1,0 +1,15 @@
+{
+  "name": "bookmeister-server",
+  "version": "1.0.0",
+  "description": "Web server component for Bookmeister",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab"
+  },
+  "author": "Mikkel Hoegh <mikkel@hoegh.org>",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^8.5.2",
+    "toml": "^2.2.2"
+  }
+}

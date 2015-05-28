@@ -1,0 +1,11 @@
+# Main configuration file for Bookmeister.
+
+[http]
+address = "127.0.0.1"
+port = 6300
+
+# CORS setup to allow the API to be used by web applications from other
+# domains. Comment out to disable.
+[cors]
+headers = [ "Authorization", "Content-Type", "If-None-Match" ]
+origin = [ "*" ]
