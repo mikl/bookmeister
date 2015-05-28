@@ -1,7 +1,7 @@
 Bookmeister
 ===========
 
-Bookmark-management web-app built with [Drupal][] and [Ember.js][].
+Bookmark-management web-app built with [Hapi.js][] and [Ember.js][].
 
-[Drupal]: https://www.drupal.org/
+[Hapi.js]: http://hapijs.com/
 [Ember.js]: http://emberjs.com/
