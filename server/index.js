@@ -16,4 +16,17 @@ server.connection({
   }
 });
 
+// Configure logging of server state with Good.
+server.register({
+  register: require('good'),
+  options: {
+    reporters: [{
+      reporter: require('good-console'),
+      events: { log: '*', response: '*', error: '*' }
+    }]
+  }
+}, function (err) {
+  if (err) { throw err; }
+});
+
 module.exports = server;

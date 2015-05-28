@@ -11,6 +11,8 @@
   "author": "Mikkel Hoegh <mikkel@hoegh.org>",
   "license": "ISC",
   "dependencies": {
+    "good": "^6.1.3",
+    "good-console": "^5.0.1",
     "hapi": "^8.5.2",
     "toml": "^2.2.2"
   },
