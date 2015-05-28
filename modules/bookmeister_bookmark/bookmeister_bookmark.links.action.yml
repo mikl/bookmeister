@@ -1,5 +1,0 @@
-bookmeister_bookmark.add:
-  route_name: bookmeister_bookmark.add
-  title: 'Add new bookmark'
-  appears_on:
-    - bookmeister_bookmark.list
