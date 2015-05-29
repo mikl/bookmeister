@@ -1,5 +1,12 @@
 # Main configuration file for Bookmeister.
 
+# Database connection settings. Same options as Pg.Client:
+# https://github.com/brianc/node-postgres/wiki/Client#new-clientobject-config--client
+[database]
+database = "bookmeister"
+password = "change-me"
+user = "bookmeister"
+
 [http]
 address = "127.0.0.1"
 port = 6300
