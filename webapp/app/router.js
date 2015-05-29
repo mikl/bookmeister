@@ -10,9 +10,4 @@ export default Router.map(function() {
     this.route('edit', {path: "/bookmark/:bookmark_id"});
     this.route('delete', {path: "/bookmark/:bookmark_id/delete"});
   });
-
-  this.resource('node', function() {
-    this.route('edit', { path: ':id/edit'});
-    this.route('delete', { path: ':id/delete'});
-  });
 });
