@@ -6,8 +6,8 @@ var Router = Ember.Router.extend({
 });
 
 export default Router.map(function() {
-  this.resource('bookmarks', {path: "/bookmark"}, function() {
-    this.route('edit', {path: "/bookmark/:bookmark_id"});
-    this.route('delete', {path: "/bookmark/:bookmark_id/delete"});
+  this.resource('bookmarks', function() {
+    this.route('edit', {path: ":bookmark_id"});
+    this.route('delete', {path: ":bookmark_id/delete"});
   });
 });
