@@ -44,7 +44,7 @@ internals.getBookmarks = function (request, reply) {
   request.querious.query('bookmarks/load-all', [], function (err, result) {
     if (err) {
       request.log(['error', 'database', 'read', 'bookmarks'], err);
-      return reply(Boom.wrap(err));
+      return reply(Boom.badImplementation(err));
     }
 
     return reply({bookmarks: result.rows});
@@ -68,7 +68,7 @@ internals.saveNewBookmark = function (request, reply) {
     bookmarkData.description || null,
   ], function (err, result) {
     if (err) {
-      return reply(Boom.wrap(err));
+      return reply(Boom.badImplementation(err));
     }
 
     reply({
