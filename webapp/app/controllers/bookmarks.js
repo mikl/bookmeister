@@ -12,12 +12,19 @@ export default Ember.Controller.extend({
       if (url.length > 3) {
         bookmark = this.store.createRecord('bookmark');
         bookmark.set('url', url);
-        bookmark.save();
+
+        var onSuccess = function(post) {
+          this.transitionToRoute('bookmarks.edit', bookmark);
+        }.bind(this);
+
+        var onFail = function(post) {
+          console.error('Saving bookmark failed');
+        }.bind(this);
+
+        bookmark.save().then(onSuccess, onFail);
 
         // Reset the input field to prevent double posts.
         this.set('newBookmarkURL', '');
-
-        this.transitionToRoute('bookmarks.edit', bookmark.get('id'));
       }
     }
   }
