@@ -1,7 +1,6 @@
 import DS from 'ember-data';
 
 var Bookmark = DS.Model.extend({
-  uuid: DS.attr('string'),
   url: DS.attr('string'),
   title: DS.attr('string'),
   description: DS.attr('string'),
