@@ -5,9 +5,11 @@ var Router = Ember.Router.extend({
   location: config.locationType
 });
 
-export default Router.map(function() {
+Router.map(function() {
   this.resource('bookmarks', function() {
     this.route('edit', {path: ":bookmark_id"});
     this.route('delete', {path: ":bookmark_id/delete"});
   });
 });
+
+export default Router;
