@@ -4,6 +4,7 @@
 // Load modules
 var Boom = require('boom');
 var uuid = require('node-uuid');
+var validators = require('./validators');
 
 // Declare internals
 var internals = {};
@@ -22,6 +23,11 @@ exports.register = function (server, options, next) {
     path: '/bookmarks',
     handler: internals.saveNewBookmark,
     config: {
+      validate: {
+        payload: {
+          bookmark: validators.bookmarkWithoutID
+        }
+      }
     }
   });
 
