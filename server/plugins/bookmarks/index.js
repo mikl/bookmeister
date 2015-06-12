@@ -31,6 +31,19 @@ exports.register = function (server, options, next) {
     }
   });
 
+  server.route({
+    method: 'PUT',
+    path: '/bookmarks/{id}',
+    handler: internals.updateBookmark,
+    config: {
+      validate: {
+        payload: {
+          bookmark: validators.bookmarkWithoutID
+        }
+      }
+    }
+  });
+
   next();
 };
 
@@ -77,3 +90,29 @@ internals.saveNewBookmark = function (request, reply) {
   });
 };
 
+// Handler for updating bookmarks.
+internals.updateBookmark = function (request, reply) {
+  var bookmarkData = request.payload.bookmark;
+  var bookmarkId = request.params.id;
+
+  // Save the bookmark to the database.
+  request.querious.query('bookmarks/update', [
+    bookmarkData.url,
+    bookmarkData.title || null,
+    bookmarkData.description || null,
+    bookmarkId
+  ], function (err, result) {
+    if (err) {
+      return reply(Boom.badImplementation(err));
+    }
+
+    if (result.rowCount < 1) {
+      return reply(Boom.notFound('Bookmark not found.'));
+    }
+
+    reply({
+      bookmark: bookmarkData,
+    });
+  });
+
+}
