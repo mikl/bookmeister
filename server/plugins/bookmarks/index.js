@@ -47,7 +47,7 @@ internals.getBookmarks = function (request, reply) {
 
 // Handler for the new bookmark route.
 internals.saveNewBookmark = function (request, reply) {
-  var bookmarkData = request.payload;
+  var bookmarkData = request.payload.bookmark;
 
   // Make sure we have an ID for the new Bookmark.
   if (!bookmarkData.id) {
