@@ -9,8 +9,8 @@
       <div class="metadata">
         {{date-stamp bookmark.createdAt}}
 
-        {{#link-to 'bookmarks.edit' this}}edit{{/link-to}}
-        {{#link-to 'bookmarks.delete' this}}delete{{/link-to}}
+        {{#link-to 'bookmarks.edit' bookmark}}edit{{/link-to}}
+        {{#link-to 'bookmarks.delete' bookmark}}delete{{/link-to}}
       </div>
     </li>
   {{/each}}
