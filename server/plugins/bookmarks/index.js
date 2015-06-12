@@ -24,7 +24,7 @@ exports.register.attributes = {
   name: 'bookmeister-bookmarks'
 };
 
-// Handler for the root skills route.
+// Handler for the bookmarks index route.
 internals.getBookmarks = function (request, reply) {
   request.querious.query('bookmarks/load-all', [], function (err, result) {
     if (err) {
