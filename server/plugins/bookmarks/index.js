@@ -19,6 +19,12 @@ exports.register = function (server, options, next) {
   });
 
   server.route({
+    method: 'GET',
+    path: '/bookmarks/{id}',
+    handler: internals.getBookmarkByID
+  });
+
+  server.route({
     method: 'POST',
     path: '/bookmarks',
     handler: internals.saveNewBookmark,
@@ -63,6 +69,22 @@ internals.getAllBookmarks = function (request, reply) {
     return reply({bookmarks: result.rows});
   });
 };
+
+// Handler for the bookmarks index route.
+internals.getBookmarkByID = function (request, reply) {
+  request.querious.query('bookmarks/load-by-id', [request.params.id], function (err, result) {
+    if (err) {
+      request.log(['error', 'database', 'read', 'bookmarks'], err);
+      return reply(Boom.badImplementation(err));
+    }
+
+    if (result.rowCount < 1) {
+      return reply(Boom.notFound('Bookmark not found.'));
+    }
+
+    return reply({bookmark: result.rows[0]});
+  });
+}
 
 // Handler for the new bookmark route.
 internals.saveNewBookmark = function (request, reply) {
