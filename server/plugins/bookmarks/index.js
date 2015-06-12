@@ -25,6 +25,12 @@ exports.register = function (server, options, next) {
   });
 
   server.route({
+    method: 'DELETE',
+    path: '/bookmarks/{id}',
+    handler: internals.deleteBookmarkByID
+  });
+
+  server.route({
     method: 'POST',
     path: '/bookmarks',
     handler: internals.saveNewBookmark,
@@ -70,7 +76,7 @@ internals.getAllBookmarks = function (request, reply) {
   });
 };
 
-// Handler for the bookmarks index route.
+// Handler for the get bookmark by ID route.
 internals.getBookmarkByID = function (request, reply) {
   request.querious.query('bookmarks/load-by-id', [request.params.id], function (err, result) {
     if (err) {
@@ -83,6 +89,18 @@ internals.getBookmarkByID = function (request, reply) {
     }
 
     return reply({bookmark: result.rows[0]});
+  });
+}
+
+// Handler for the delete bookmarks route.
+internals.deleteBookmarkByID = function (request, reply) {
+  request.querious.query('bookmarks/delete-by-id', [request.params.id], function (err, result) {
+    if (err) {
+      request.log(['error', 'database', 'read', 'bookmarks'], err);
+      return reply(Boom.badImplementation(err));
+    }
+
+    return reply().code(204);
   });
 }
 
