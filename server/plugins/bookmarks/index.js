@@ -15,7 +15,7 @@ exports.register = function (server, options, next) {
   server.route({
     method: 'GET',
     path: '/bookmarks',
-    handler: internals.getBookmarks
+    handler: internals.getAllBookmarks
   });
 
   server.route({
@@ -53,7 +53,7 @@ exports.register.attributes = {
 };
 
 // Handler for the bookmarks index route.
-internals.getBookmarks = function (request, reply) {
+internals.getAllBookmarks = function (request, reply) {
   request.querious.query('bookmarks/load-all', [], function (err, result) {
     if (err) {
       request.log(['error', 'database', 'read', 'bookmarks'], err);
