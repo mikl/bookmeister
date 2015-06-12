@@ -13,12 +13,12 @@ export default Ember.Controller.extend({
         bookmark = this.store.createRecord('bookmark');
         bookmark.set('url', url);
 
-        var onSuccess = function(post) {
+        var onSuccess = function (bookmark) {
           this.transitionToRoute('bookmarks.edit', bookmark);
         }.bind(this);
 
-        var onFail = function(post) {
-          console.error('Saving bookmark failed');
+        var onFail = function () {
+          console.error('Saving bookmark failed', arguments);
         }.bind(this);
 
         bookmark.save().then(onSuccess, onFail);
