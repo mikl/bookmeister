@@ -18,6 +18,7 @@
     "hapi-node-postgres": "^2.1.1",
     "hapi-querious": "^0.2.0",
     "hoek": "^2.14.0",
+    "joi": "^6.4.3",
     "node-uuid": "^1.4.3",
     "querious": "^0.2.0",
     "toml": "^2.2.2"
