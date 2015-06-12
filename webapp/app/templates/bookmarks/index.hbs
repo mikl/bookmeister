@@ -1,6 +1,6 @@
-{{#if controller.length}}
+{{#if model.length}}
 <ul class="bookmark-list">
-  {{#each controller}}
+  {{#each model}}
     <li class="bookmeister-bookmark">
       <a class="title" {{bind-attr href=url}}>
         {{displayName}}
@@ -17,4 +17,4 @@
 </ul>
 {{/if}}
 
-{{controller.length}} bookmarks found.
+{{model.length}} bookmarks found.
