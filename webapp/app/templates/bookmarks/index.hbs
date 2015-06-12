@@ -1,13 +1,13 @@
 {{#if model.length}}
 <ul class="bookmark-list">
-  {{#each model}}
+  {{#each bookmark in model}}
     <li class="bookmeister-bookmark">
-      <a class="title" {{bind-attr href=url}}>
-        {{displayName}}
+      <a class="title" {{bind-attr href=bookmark.url}}>
+        {{bookmark.displayName}}
       </a>
 
       <div class="metadata">
-        {{date-stamp createdAt}}
+        {{date-stamp bookmark.createdAt}}
 
         {{#link-to 'bookmarks.edit' this}}edit{{/link-to}}
         {{#link-to 'bookmarks.delete' this}}delete{{/link-to}}
