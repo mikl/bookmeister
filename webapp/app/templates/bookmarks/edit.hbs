@@ -23,4 +23,6 @@
   <button {{action 'saveBookmark'}} class="primary-action save">
     Save bookmark
   </button>
+
+  {{#link-to 'bookmarks.delete' model}}Delete bookmark{{/link-to}}
 </form>
