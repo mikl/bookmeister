@@ -10,7 +10,7 @@ validators.bookmarkID = Joi.string().guid();
 
 // Bookmark without ID. Used for the update and save payloads.
 validators.bookmarkWithoutID = {
-  id: Joi.string().allow(null),
+  id: validators.bookmarkID.allow(null),
   url: Joi.string()
     .required()
     .max(200, 'utf-8'),
@@ -25,6 +25,6 @@ validators.bookmarkWithoutID = {
 
 // The full bookmark payload, requiring the ID.
 validators.bookmark = Hoek.clone(validators.bookmarkWithoutID);
-validators.bookmark.id = validators.bookmark.id.required();
+validators.bookmark.id = validators.bookmarkID.required();
 
 module.exports = validators;
