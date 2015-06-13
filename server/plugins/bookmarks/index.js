@@ -25,7 +25,7 @@ exports.register = function (server, options, next) {
     config: {
       response: {
         schema: {
-          bookmark: validators.bookmark 
+          bookmark: validators.bookmark
         }
       },
       validate: {
@@ -54,6 +54,11 @@ exports.register = function (server, options, next) {
     path: '/bookmarks',
     handler: internals.saveNewBookmark,
     config: {
+      response: {
+        schema: {
+          bookmark: validators.bookmark
+        }
+      },
       validate: {
         payload: {
           bookmark: validators.bookmarkWithoutID
