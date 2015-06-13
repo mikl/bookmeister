@@ -2,6 +2,7 @@
 'use strict';
 
 // Load modules
+var _ = require('lodash');
 var Boom = require('boom');
 var uuid = require('node-uuid');
 var validators = require('./validators');
@@ -150,6 +151,11 @@ internals.saveNewBookmark = function (request, reply) {
     if (err) {
       return reply(Boom.badImplementation(err));
     }
+
+    // Update the bookmark object with the data returned from the
+    // database. At the time of this writing, these are only the date
+    // fields, but it could be more with time.
+    _.assign(bookmarkData, result.rows[0]);
 
     reply({
       bookmark: bookmarkData,

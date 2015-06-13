@@ -19,6 +19,7 @@
     "hapi-querious": "^0.2.0",
     "hoek": "^2.14.0",
     "joi": "^6.4.3",
+    "lodash": "^3.9.3",
     "node-uuid": "^1.4.3",
     "querious": "^0.2.0",
     "toml": "^2.2.2"
