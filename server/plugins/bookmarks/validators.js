@@ -18,9 +18,9 @@ validators.bookmarkWithoutID = {
     .max(200, 'utf-8')
     .allow(null),
   description: Joi.string().allow(null),
-  added_at: Joi.string().allow(null),
-  created_at: Joi.string().allow(null),
-  updated_at: Joi.string().allow(null),
+  added_at: Joi.date().iso().allow(null),
+  created_at: Joi.date().iso().allow(null),
+  updated_at: Joi.date().iso().allow(null),
 };
 
 // The full bookmark payload, requiring the ID.
