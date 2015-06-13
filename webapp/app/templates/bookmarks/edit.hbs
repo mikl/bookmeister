@@ -3,17 +3,17 @@
 <form class="new-bookmark-form">
   <label class="url">
     URL
-    {{input valueBinding="url" type="url"}}
+    {{input value=model.url type="url"}}
   </label>
 
   <label class="title">
     Title
-    {{input valueBinding="title"}}
+    {{input value=model.title}}
   </label>
 
   <label class="description">
     Description
-    {{textarea valueBinding="description"}}
+    {{textarea value=model.description}}
   </label>
 
   <button {{action 'cancel'}} class="cancel" type="button">
