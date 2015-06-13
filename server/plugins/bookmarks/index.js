@@ -183,6 +183,11 @@ internals.updateBookmark = function (request, reply) {
       return reply(Boom.notFound('Bookmark not found.'));
     }
 
+    // Update the bookmark object with the data returned from the
+    // database. At the time of this writing, these are only the date
+    // fields, but it could be more with time.
+    _.assign(bookmarkData, result.rows[0]);
+
     reply({
       bookmark: bookmarkData,
     });
