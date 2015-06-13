@@ -13,7 +13,12 @@ validators.bookmarkWithoutID = {
   id: validators.bookmarkID.allow(null),
   url: Joi.string()
     .required()
-    .max(200, 'utf-8'),
+    .uri({
+      scheme: [
+        'http',
+        'https',
+      ]
+    }),
   title: Joi.string()
     .max(200, 'utf-8')
     .allow(null),
