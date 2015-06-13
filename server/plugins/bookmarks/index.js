@@ -166,14 +166,13 @@ internals.saveNewBookmark = function (request, reply) {
 // Handler for updating bookmarks.
 internals.updateBookmark = function (request, reply) {
   var bookmarkData = request.payload.bookmark;
-  var bookmarkId = request.params.id;
 
   // Save the bookmark to the database.
   request.querious.query('bookmarks/update', [
     bookmarkData.url,
     bookmarkData.title || null,
     bookmarkData.description || null,
-    bookmarkId
+    request.params.id
   ], function (err, result) {
     if (err) {
       return reply(Boom.badImplementation(err));
