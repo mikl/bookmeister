@@ -6,6 +6,8 @@ var Joi = require('joi');
 
 var validators = {};
 
+validators.bookmarkID = Joi.string().guid();
+
 // Bookmark without ID. Used for the update and save payloads.
 validators.bookmarkWithoutID = {
   id: Joi.string().allow(null),

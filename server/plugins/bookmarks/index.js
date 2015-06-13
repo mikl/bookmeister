@@ -21,13 +21,27 @@ exports.register = function (server, options, next) {
   server.route({
     method: 'GET',
     path: '/bookmarks/{id}',
-    handler: internals.getBookmarkByID
+    handler: internals.getBookmarkByID,
+    config: {
+      validate: {
+        params: {
+          id: validators.bookmarkID.required()
+        }
+      }
+    }
   });
 
   server.route({
     method: 'DELETE',
     path: '/bookmarks/{id}',
-    handler: internals.deleteBookmarkByID
+    handler: internals.deleteBookmarkByID,
+    config: {
+      validate: {
+        params: {
+          id: validators.bookmarkID.required()
+        }
+      }
+    }
   });
 
   server.route({
@@ -49,6 +63,9 @@ exports.register = function (server, options, next) {
     handler: internals.updateBookmark,
     config: {
       validate: {
+        params: {
+          id: validators.bookmarkID.required()
+        },
         payload: {
           bookmark: validators.bookmarkWithoutID
         }
