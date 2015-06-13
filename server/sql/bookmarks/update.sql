@@ -4,4 +4,4 @@ UPDATE bookmarks
       description = $3,
       updated_at = now()
 WHERE id = $4
-RETURNING updated_at;
+RETURNING id, updated_at;
