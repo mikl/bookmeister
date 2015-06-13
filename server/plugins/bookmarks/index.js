@@ -23,6 +23,11 @@ exports.register = function (server, options, next) {
     path: '/bookmarks/{id}',
     handler: internals.getBookmarkByID,
     config: {
+      response: {
+        schema: {
+          bookmark: validators.bookmark 
+        }
+      },
       validate: {
         params: {
           id: validators.bookmarkID.required()
