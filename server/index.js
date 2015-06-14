@@ -21,7 +21,7 @@ server.register({
   register: require('hapi-node-postgres'),
   options: {
     attach: 'onPreAuth',
-    connectionString: config.database,
+    connectionString: config.querious.database,
     native: true
   }
 }, function (err) {

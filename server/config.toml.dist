@@ -2,7 +2,8 @@
 
 # Database connection settings. Same options as Pg.Client:
 # https://github.com/brianc/node-postgres/wiki/Client#new-clientobject-config--client
-[database]
+[querious.database]
+type = "postgresql"
 database = "bookmeister"
 password = "change-me"
 user = "bookmeister"
