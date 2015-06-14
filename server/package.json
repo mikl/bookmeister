@@ -6,6 +6,7 @@
   "scripts": {
     "devserver": "nodemon scripts/server.js",
     "start": "node scripts/server.js",
+    "migrate": "querious-migration -c config.toml -m sql/migrations",
     "test": "lab"
   },
   "author": "Mikkel Hoegh <mikkel@hoegh.org>",
