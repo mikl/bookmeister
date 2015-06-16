@@ -13,7 +13,7 @@ export default DS.RESTAdapter.extend({
 
       var hexdigit;
 
-      if (char == 'x') {
+      if (char === 'x') {
         hexdigit = randVal;
       } else {
         hexdigit = (randVal & 0x3 | 0x8);

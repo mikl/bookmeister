@@ -1,3 +1,4 @@
+/* global moment */
 import DS from 'ember-data';
 
 var Bookmark = DS.Model.extend({
