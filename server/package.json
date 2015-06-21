@@ -24,7 +24,8 @@
     "lodash": "^3.9.3",
     "node-uuid": "^1.4.3",
     "pg-native": "^1.8.1",
-    "querious": "^0.2.0",
+    "querious": "^0.3.0",
+    "querious-migration": "^1.0.0",
     "toml": "^2.2.2"
   },
   "devDependencies": {
