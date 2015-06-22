@@ -1,7 +1,6 @@
 UPDATE bookmarks
   SET url = $1,
       title = $2,
-      description = $3,
-      updated_at = now()
+      description = $3
 WHERE id = $4
 RETURNING id, updated_at;
