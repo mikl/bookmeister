@@ -118,7 +118,7 @@ internals.getBookmarkByID = function (request, reply) {
 
     return reply({bookmark: result.rows[0]});
   });
-}
+};
 
 // Handler for the delete bookmarks route.
 internals.deleteBookmarkByID = function (request, reply) {
@@ -130,7 +130,7 @@ internals.deleteBookmarkByID = function (request, reply) {
 
     return reply().code(204);
   });
-}
+};
 
 // Handler for the new bookmark route.
 internals.saveNewBookmark = function (request, reply) {
@@ -191,5 +191,4 @@ internals.updateBookmark = function (request, reply) {
       bookmark: bookmarkData,
     });
   });
-
-}
+};
