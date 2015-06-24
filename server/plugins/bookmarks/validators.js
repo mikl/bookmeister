@@ -26,6 +26,8 @@ validators.bookmarkWithoutID = {
   added_at: Joi.date().iso().allow(null),
   created_at: Joi.date().iso().allow(null),
   updated_at: Joi.date().iso().allow(null),
+  'private': Joi.boolean(),
+  to_read: Joi.boolean(),
 };
 
 // The full bookmark payload, requiring the ID.

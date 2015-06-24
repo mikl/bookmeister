@@ -118,7 +118,7 @@ internals.getBookmarkByID = function (request, reply) {
 
     return reply({bookmark: result.rows[0]});
   });
-}
+};
 
 // Handler for the delete bookmarks route.
 internals.deleteBookmarkByID = function (request, reply) {
@@ -130,7 +130,7 @@ internals.deleteBookmarkByID = function (request, reply) {
 
     return reply().code(204);
   });
-}
+};
 
 // Handler for the new bookmark route.
 internals.saveNewBookmark = function (request, reply) {
@@ -147,6 +147,8 @@ internals.saveNewBookmark = function (request, reply) {
     bookmarkData.url,
     bookmarkData.title || null,
     bookmarkData.description || null,
+    bookmarkData.private || false,
+    bookmarkData.to_read || false,
   ], function (err, result) {
     if (err) {
       return reply(Boom.badImplementation(err));
@@ -172,6 +174,8 @@ internals.updateBookmark = function (request, reply) {
     bookmarkData.url,
     bookmarkData.title || null,
     bookmarkData.description || null,
+    bookmarkData.private || false,
+    bookmarkData.to_read || false,
     request.params.id
   ], function (err, result) {
     if (err) {
@@ -191,5 +195,4 @@ internals.updateBookmark = function (request, reply) {
       bookmark: bookmarkData,
     });
   });
-
-}
+};
