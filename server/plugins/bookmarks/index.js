@@ -147,6 +147,8 @@ internals.saveNewBookmark = function (request, reply) {
     bookmarkData.url,
     bookmarkData.title || null,
     bookmarkData.description || null,
+    bookmarkData.private || false,
+    bookmarkData.to_read || false,
   ], function (err, result) {
     if (err) {
       return reply(Boom.badImplementation(err));
