@@ -174,6 +174,8 @@ internals.updateBookmark = function (request, reply) {
     bookmarkData.url,
     bookmarkData.title || null,
     bookmarkData.description || null,
+    bookmarkData.private || false,
+    bookmarkData.to_read || false,
     request.params.id
   ], function (err, result) {
     if (err) {
