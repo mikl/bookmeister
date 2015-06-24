@@ -16,6 +16,16 @@
     {{textarea value=model.description}}
   </label>
 
+  <label class="private">
+    {{input type="checkbox" name="private" checked=model.private}}
+    Private
+  </label>
+
+  <label class="to-read">
+    {{input type="checkbox" name="to-read" checked=model.toRead}}
+    To read
+  </label>
+
   <button {{action 'cancel'}} class="cancel" type="button">
     Cancel
   </button>
