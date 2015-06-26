@@ -1,4 +1,4 @@
-UPDATE bookmarks
+UPDATE bookmarks.bookmarks
   SET url = $1,
       title = $2,
       description = $3,

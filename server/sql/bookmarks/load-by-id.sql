@@ -1,2 +1,2 @@
-SELECT * FROM bookmarks
+SELECT * FROM bookmarks.bookmarks
 WHERE id = $1;
