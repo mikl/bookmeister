@@ -1,2 +1,3 @@
-DROP TABLE bookmarks;
-DROP INDEX url_idx;
+DROP INDEX bookmarks.url_idx;
+DROP TABLE bookmarks.bookmarks;
+DROP SCHEMA bookmarks;

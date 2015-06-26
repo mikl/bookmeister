@@ -1,4 +1,6 @@
-CREATE TABLE bookmarks
+CREATE SCHEMA bookmarks;
+
+CREATE TABLE bookmarks.bookmarks
 (
   id uuid NOT NULL,
   url text NOT NULL,
@@ -11,5 +13,4 @@ CREATE TABLE bookmarks
 );
 
 CREATE INDEX url_idx
-  ON bookmarks
-  (url);
+  ON bookmarks.bookmarks (url);
