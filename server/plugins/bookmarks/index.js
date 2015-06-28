@@ -194,7 +194,12 @@ internals.saveNewBookmark = function (request, reply) {
 
 // Handler for updating bookmarks.
 internals.updateBookmark = function (request, reply) {
-  var bookmarkData = request.payload.bookmark;
+  let bookmarkData = request.payload.bookmark;
+  let tags = '';
+
+  if (bookmarkData.tags) {
+    tags = bookmarkData.tags.join(',');
+  }
 
   // Save the bookmark to the database.
   request.querious.query('bookmarks/update', [
@@ -203,6 +208,7 @@ internals.updateBookmark = function (request, reply) {
     bookmarkData.description || null,
     bookmarkData.private || false,
     bookmarkData.to_read || false,
+    tags,
     request.params.id
   ], function (err, result) {
     if (err) {
