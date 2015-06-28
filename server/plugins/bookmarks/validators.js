@@ -10,7 +10,7 @@ validators.bookmarkID = Joi.string().guid();
 
 // Bookmark without ID. Used for the update and save payloads.
 validators.bookmarkWithoutID = {
-  id: validators.bookmarkID.allow(null),
+  id: validators.bookmarkID.allow(null).optional(),
   url: Joi.string()
     .required()
     .uri({
@@ -21,13 +21,13 @@ validators.bookmarkWithoutID = {
     }),
   title: Joi.string()
     .max(200, 'utf-8')
-    .allow(null),
-  description: Joi.string().allow(null),
-  added_at: Joi.date().iso().allow(null),
-  created_at: Joi.date().iso().allow(null),
-  updated_at: Joi.date().iso().allow(null),
-  'private': Joi.boolean(),
-  to_read: Joi.boolean(),
+    .optional().allow(null),
+  description: Joi.string().optional().allow(null),
+  added_at: Joi.date().iso().optional().allow(null),
+  created_at: Joi.date().iso().optional().allow(null),
+  updated_at: Joi.date().iso().optional().allow(null),
+  'private': Joi.boolean().optional(),
+  to_read: Joi.boolean().optional(),
 };
 
 // The full bookmark payload, requiring the ID.
