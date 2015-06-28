@@ -28,6 +28,22 @@ validators.bookmarkWithoutID = {
   updated_at: Joi.date().iso().optional().allow(null),
   'private': Joi.boolean().optional(),
   to_read: Joi.boolean().optional(),
+
+  tags: Joi.array()
+    .items(Joi.string()
+      // Limit each tag to 50 characters.
+      .max(50, 'utf-8')
+      // Remove extraneous whitespace.
+      .trim()
+      // Disallow commas in tags.
+      .regex(/^[^,]+$/, 'no commas')
+    )
+    // 20 tags per bookmark should be enough for everyone, right?
+    .max(20)
+    // Duplicate tags not allowed.
+    .unique()
+    // Tags are not required.
+    .optional()
 };
 
 // The full bookmark payload, requiring the ID.
