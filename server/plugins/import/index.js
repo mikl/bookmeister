@@ -42,11 +42,14 @@ internals.importData = function (request, reply) {
         item.href
       ], function (err, result) {
         if (!err && result.rowCount === 0) {
-          request.querious.query('bookmarks/insert', [
+          request.querious.query('bookmarks/import', [
             uuid.v4(),
             item.href,
             item.description,
-            item.extended
+            item.extended,
+            item.time,
+            (item.shared !== 'yes'),
+            (item.toread === 'yes'),
           ], callback);
         }
         else {
