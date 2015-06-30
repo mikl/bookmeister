@@ -1,7 +1,8 @@
 import Ember from 'ember';
+import RouteMixin from 'ember-cli-pagination/remote/route-mixin';
 
-export default Ember.Route.extend({
-  model: function () {
-    return this.store.find('bookmark');
+export default Ember.Route.extend(RouteMixin, {
+  model: function (params) {
+    return this.findPaged('bookmark', params);
   }
 });
