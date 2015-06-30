@@ -3,6 +3,7 @@
 
 // Load modules
 var _ = require('lodash');
+let async = require('async');
 var Boom = require('boom');
 var uuid = require('node-uuid');
 var validators = require('./validators');
@@ -16,7 +17,15 @@ exports.register = function (server, options, next) {
   server.route({
     method: 'GET',
     path: '/bookmarks',
-    handler: internals.getAllBookmarks
+    handler: internals.getAllBookmarks,
+    config: {
+      validate: {
+        query: {
+          page: validators.pageNumber,
+          per_page: validators.itemsPerPage
+        }
+      }
+    }
   });
 
   server.route({
@@ -94,13 +103,31 @@ exports.register.attributes = {
 
 // Handler for the bookmarks index route.
 internals.getAllBookmarks = function (request, reply) {
-  request.querious.query('bookmarks/load-all', [], function (err, result) {
+  let pageNumber = request.query.page || 1;
+  let itemsPerPage = request.query.per_page || 10;
+  let offset = (pageNumber - 1) * itemsPerPage;
+
+  async.parallel({
+    count: function(callback){
+      request.querious.query('bookmarks/count', [], callback);
+    },
+    bookmarks: function(callback){
+      request.querious.query('bookmarks/load-paged', [itemsPerPage, offset], callback);
+    }
+  },
+  function(err, results) {
     if (err) {
       request.log(['error', 'database', 'read', 'bookmarks'], err);
       return reply(Boom.badImplementation(err));
     }
-
-    return reply({bookmarks: result.rows});
+    else {
+      return reply({
+        bookmarks: results.bookmarks.rows,
+        meta: {
+          total_pages: Math.ceil(results.count.rows[0].count / itemsPerPage)
+        }
+      });
+    }
   });
 };
 

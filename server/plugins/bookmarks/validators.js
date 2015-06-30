@@ -34,4 +34,7 @@ validators.bookmarkWithoutID = {
 validators.bookmark = Hoek.clone(validators.bookmarkWithoutID);
 validators.bookmark.id = validators.bookmarkID.required();
 
+validators.pageNumber = Joi.number().integer().positive().max(1000);
+validators.itemsPerPage = Joi.number().integer().positive().max(100).multiple(5);
+
 module.exports = validators;
