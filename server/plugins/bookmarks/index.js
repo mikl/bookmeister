@@ -17,7 +17,7 @@ exports.register = function (server, options, next) {
   server.route({
     method: 'GET',
     path: '/bookmarks',
-    handler: internals.getAllBookmarks,
+    handler: internals.getBookmarks,
     config: {
       validate: {
         query: {
@@ -102,7 +102,7 @@ exports.register.attributes = {
 };
 
 // Handler for the bookmarks index route.
-internals.getAllBookmarks = function (request, reply) {
+internals.getBookmarks = function (request, reply) {
   let pageNumber = request.query.page || 1;
   let itemsPerPage = request.query.per_page || 10;
   let offset = (pageNumber - 1) * itemsPerPage;
