@@ -3,9 +3,11 @@
 //////////////////////////////
 
 .bookmark-list {
-  @include no-bullets;
-
   padding: 0;
+
+  > li {
+    list-style-type: none;
+  }
 }
 
 .bookmeister-bookmark {
@@ -24,11 +26,14 @@
     }
 
     a {
-      @include link-colors($muted-link, $hover);
-
+      color: $muted-link;
       display: inline-block;
       padding-left: 0.5rem;
       text-decoration: none;
+
+      &:hover {
+        color: $hover;
+      }
     }
   }
 }

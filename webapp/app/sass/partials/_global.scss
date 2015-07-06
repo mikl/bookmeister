@@ -17,7 +17,11 @@ h2 { font-size: 1.8rem; }
 h1 { font-size: 2.0rem; }
 
 a {
-  @include link-colors($link, $hover);
+  color: $link;
+
+  &:hover {
+    color: $hover;
+  }
 }
 
 .site-header {
@@ -29,7 +33,7 @@ a {
   @extend %centered-content;
 
   h1 {
-    @include single-text-shadow(rgba($black, 0.5), 1px, 1px, 1px);
+    text-shadow: 1px 1px 1px rgba($black, 0.5);
     margin: 0;
 
     a {
@@ -41,8 +45,10 @@ a {
 
 .main-container {
   @extend %centered-content;
-  @include border-bottom-radius(0.5rem);
-  @include single-box-shadow(0, 1px, 5px, false, rgba($black, 0.3));
+
+  box-shadow: 0 1px 5px rgba($black, 0.3);
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 
   background-color: $white;
   color: $black;
