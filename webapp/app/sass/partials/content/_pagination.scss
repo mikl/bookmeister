@@ -1,0 +1,31 @@
+//////////////////////////////
+// Styling for the pagination.
+//////////////////////////////
+
+.pagination-centered {
+  text-align: center;
+}
+
+.pagination {
+  padding: 0;
+
+  > li {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  a {
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    font-size: 16px;
+    padding: 0 2px;
+
+    background-color: $identity-color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($identity-color, 10%);
+    }
+  }
+}
