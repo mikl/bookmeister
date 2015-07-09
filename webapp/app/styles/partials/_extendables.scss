@@ -1,5 +1,5 @@
 %centered-content {
-  @include clearfix(true);
+  @include clearfix;
 
   margin: 0 auto;
   max-width: 960px;
