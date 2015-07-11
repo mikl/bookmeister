@@ -15,6 +15,7 @@ var Bookmark = DS.Model.extend({
   // Must be quoted, private is a reserved word.
   'private': DS.attr('boolean', {defaultValue: false}),
   toRead: DS.attr('boolean', {defaultValue: false}),
+  tags: DS.attr('array', {defaultValue: []}),
 
   displayName: function() {
     if (this.get('title')) {

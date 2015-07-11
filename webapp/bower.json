@@ -13,6 +13,7 @@
     "loader.js": "ember-cli/loader.js#3.2.0",
     "qunit": "~1.17.1",
     "moment": "~2.10.2",
-    "ember-uploader": "0.3.7"
+    "ember-uploader": "0.3.7",
+    "jquery-tag-editor": "~1.0.14"
   }
 }

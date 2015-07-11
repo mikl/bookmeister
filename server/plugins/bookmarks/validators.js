@@ -10,7 +10,7 @@ validators.bookmarkID = Joi.string().guid();
 
 // Bookmark without ID. Used for the update and save payloads.
 validators.bookmarkWithoutID = {
-  id: validators.bookmarkID.allow(null),
+  id: validators.bookmarkID.allow(null).optional(),
   url: Joi.string()
     .required()
     .uri({
@@ -21,13 +21,29 @@ validators.bookmarkWithoutID = {
     }),
   title: Joi.string()
     .max(200, 'utf-8')
-    .allow(null),
-  description: Joi.string().allow(null),
-  added_at: Joi.date().iso().allow(null),
-  created_at: Joi.date().iso().allow(null),
-  updated_at: Joi.date().iso().allow(null),
-  'private': Joi.boolean(),
-  to_read: Joi.boolean(),
+    .optional().allow(null),
+  description: Joi.string().optional().allow(null),
+  added_at: Joi.date().iso().optional().allow(null),
+  created_at: Joi.date().iso().optional().allow(null),
+  updated_at: Joi.date().iso().optional().allow(null),
+  'private': Joi.boolean().optional(),
+  to_read: Joi.boolean().optional(),
+
+  tags: Joi.array()
+    .items(Joi.string()
+      // Limit each tag to 50 characters.
+      .max(50, 'utf-8')
+      // Remove extraneous whitespace.
+      .trim()
+      // Disallow commas in tags.
+      .regex(/^[^,]+$/, 'no commas')
+    )
+    // 20 tags per bookmark should be enough for everyone, right?
+    .max(20)
+    // Duplicate tags not allowed.
+    .unique()
+    // Tags are not required.
+    .optional()
 };
 
 // The full bookmark payload, requiring the ID.

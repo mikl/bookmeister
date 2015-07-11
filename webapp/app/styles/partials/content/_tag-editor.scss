@@ -1,0 +1,120 @@
+// Styling for the jQuery tag editor widget.
+
+.tag-editor {
+  // Make what is actually a UL into something resembling an input field.
+  background-color: white;
+  border: 1px solid $medium-grey;
+  cursor: text;
+  font-size: 14px;
+  list-style-type: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 3px 5px;
+
+
+  // Placeholder text, when there's no tags.
+  .placeholder {
+    color: $medium-grey;
+  }
+
+  // hide IE10 "clear field" X
+  ::-ms-clear {
+    display: none;
+  }
+
+  // Each tag is a li.
+  li {
+    display: inline-block;
+    margin: 3px 2px;
+
+    &:first-child {
+      // To defeat the empty li added by tag-editor, that adds extra
+      // whitespace in front.
+      margin-left: -1px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Each part of the tag (inside the li) is a div.
+  div {
+    display: inline-block;
+
+    // To make space for Emoji and other weird stuff.
+    line-height: 1.5;
+  }
+
+  // Remove all browser chrome from the input field, and make it inherit
+  // text settings from the non-input tags, so it looks similar.
+  input {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    vertical-align: inherit;
+  }
+
+  // No idea what the point of this element is. We don't need it.
+  .tag-editor-spacer {
+    display: none;
+  }
+
+  // These two elements make up the visual tag.
+  .tag-editor-tag,
+  .tag-editor-delete {
+    background-color: hsl($identity-hue, 50%, 50%);
+    color: white;
+    padding: 2px 4px;
+    white-space: nowrap;
+  }
+
+  .tag-editor-tag {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+
+    &.active {
+      background-color: transparent;
+      color: $black;
+
+      input {
+        color: $black;
+      }
+    }
+  }
+
+  .tag-editor-delete {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    padding-left: 0;
+
+    &:hover {
+      color: $firebrick;
+    }
+
+    i {
+      &::before {
+        // https://en.wikipedia.org/wiki/Multiplication_sign
+        content: "\00D7";
+      }
+    }
+  }
+}
+
+// Nasty hack to hide the delete button when editing.
+.tag-editor-tag.active+.tag-editor-delete {
+  display: none;
+}
+
+// Hide the input field visually, but allow it to be accessible for tab
+// navigation.
+.tag-editor-hidden-src {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
