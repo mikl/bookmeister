@@ -20,7 +20,6 @@ app.import('bower_components/moment/moment.js');
 
 // Tag editor and dependencies.
 app.import('bower_components/caret/jquery.caret.js');
-app.import('bower_components/jquery-tag-editor/jquery.tag-editor.css');
 app.import('bower_components/jquery-tag-editor/jquery.tag-editor.js');
 
 module.exports = app.toTree();
