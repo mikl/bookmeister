@@ -1,8 +1,8 @@
 {{#if model.length}}
 <ul class="bookmark-list">
-  {{#each bookmark in model}}
+  {{#each model as |bookmark|}}
     <li class="bookmeister-bookmark">
-      <a class="title" {{bind-attr href=bookmark.url}}>
+      <a class="title" href={{bookmark.url}}>
         {{bookmark.displayName}}
       </a>
 
