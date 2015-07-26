@@ -60,6 +60,4 @@ internals.registerAccount = function (request, reply) {
 
     reply({}).code(201);
   });
-
-  return reply();
 };
