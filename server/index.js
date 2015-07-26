@@ -56,6 +56,11 @@ server.register(require('./plugins/import'), function (err) {
   if (err) { throw err; }
 });
 
+// Add the users plugin.
+server.register(require('./plugins/users'), function (err) {
+  if (err) { throw err; }
+});
+
 // Configure logging of server state with Good.
 server.register({
   register: require('good'),
