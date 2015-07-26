@@ -32,8 +32,6 @@ exports.register.attributes = {
 
 // Route handling reciept of import data.
 internals.importData = function (request, reply) {
-  console.log('ninja', request.payload.file[0]);
-
   if (request.payload.file && _.isArray(request.payload.file)) {
     async.eachLimit(request.payload.file, 16, function (item, callback) {
 
