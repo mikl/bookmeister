@@ -20,7 +20,11 @@
     <small>Be secure. 8-128 characters allowed.</small>
   </label>
 
-  <button {{action 'register'}} class="primary-action save">
-    Register account
-  </button>
+  {{#if submitted}}
+    Processing…
+  {{else}}
+    <button {{action 'register'}} class="primary-action save">
+      Register account
+    </button>
+  {{/if}}
 </form>

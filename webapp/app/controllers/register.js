@@ -5,9 +5,18 @@ export default Ember.Controller.extend({
   email: '',
   password: '',
   username: '',
+  
+  // Helper variable to prevent double submission.
+  processing: false,
 
   actions: {
     register: function () {
+      if (this.get('processing')) {
+        return;
+      }
+
+      this.set('processing', true);
+
       let payload = {
         account: {
           email: this.get('email'),
