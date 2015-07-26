@@ -22,7 +22,7 @@ validators.bookmarkWithoutID = {
   title: Joi.string()
     .max(200, 'utf-8')
     .optional().allow(null),
-  description: Joi.string().optional().allow(null),
+  description: Joi.string().optional().allow(null).allow(''),
   added_at: Joi.date().iso().optional().allow(null),
   created_at: Joi.date().iso().optional().allow(null),
   updated_at: Joi.date().iso().optional().allow(null),
