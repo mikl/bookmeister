@@ -1,4 +1,5 @@
 /* global moment */
+import Ember from 'ember';
 import DS from 'ember-data';
 
 var Bookmark = DS.Model.extend({
@@ -17,13 +18,13 @@ var Bookmark = DS.Model.extend({
   toRead: DS.attr('boolean', {defaultValue: false}),
   tags: DS.attr('array', {defaultValue: []}),
 
-  displayName: function() {
+  displayName: Ember.computed('url', 'title', function() {
     if (this.get('title')) {
       return this.get('title');
     }
 
     return this.get('url');
-  }.property('url', 'title')
+  })
 });
 
 export default Bookmark;

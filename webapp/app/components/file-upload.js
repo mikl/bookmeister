@@ -3,7 +3,7 @@ import EmberUploader from 'ember-uploader';
 
 export default EmberUploader.FileField.extend({
   url: '',
-  filesDidChange: (function() {
+  filesDidChange: Ember.observer('files', function() {
     var uploadUrl = this.get('url');
     var files = this.get('files');
 
@@ -14,5 +14,5 @@ export default EmberUploader.FileField.extend({
     if (!Ember.isEmpty(files)) {
       uploader.upload(files[0]);
     }
-  }).observes('files')
+  })
 });

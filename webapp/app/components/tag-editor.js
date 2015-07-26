@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  _initialiseTagEditor: function () {
+  _initialiseTagEditor: Ember.on('didInsertElement', function () {
     let input = this.$('textarea');
 
     input.tagEditor({
@@ -11,7 +11,7 @@ export default Ember.Component.extend({
         this.set('tags', tags || []);
       },
     });
-  }.on('didInsertElement'),
+  }),
 
   serializedTags: Ember.computed("tags", {
     get: function() {
