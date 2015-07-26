@@ -9,9 +9,9 @@ export default Ember.Controller.extend({
     },
 
     saveBookmark: function () {
-      this.get('model').save();
-
-      this.transitionToRoute('bookmarks');
+      this.get('model').save().then(function () {
+        this.transitionToRoute('bookmarks');
+      }.bind(this));
     }
   }
 });
