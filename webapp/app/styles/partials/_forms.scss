@@ -1,0 +1,16 @@
+// Styling for forms.
+
+form {
+  > label {
+    display: block;
+    margin-bottom: 0.5rem;
+
+    .ember-text-field {
+      margin-left: 1em;
+    }
+
+    textarea {
+      display: block;
+    }
+  }
+}
