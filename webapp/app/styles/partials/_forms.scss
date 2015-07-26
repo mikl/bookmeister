@@ -5,11 +5,12 @@ form {
     display: block;
     margin-bottom: 0.5rem;
 
-    .ember-text-field {
-      margin-left: 1em;
+    .field-title {
+      display: block;
+      font-weight: bold;
     }
 
-    textarea {
+    .ember-text-field, textarea {
       display: block;
     }
   }
