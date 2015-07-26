@@ -1,0 +1,35 @@
+import config from '../config/environment';
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  email: '',
+  password: '',
+  username: '',
+
+  actions: {
+    register: function () {
+      let payload = {
+        account: {
+          email: this.get('email'),
+          password: this.get('password'),
+          username: this.get('username')
+        }
+      };
+
+      Ember.$.ajax({
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(payload),
+        method: 'POST',
+        url: config.bookmeisterServer + '/account/register',
+
+        error: function () {
+          console.error('Account creation failed', arguments);
+          this.transitionToRoute('error');
+        }.bind(this),
+        success: function () {
+          this.transitionToRoute('bookmarks');
+        }.bind(this)
+      });
+    }
+  }
+});

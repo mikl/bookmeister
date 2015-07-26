@@ -1,0 +1,26 @@
+<h4>Register account</h4>
+
+<form class="user-account-registration-form">
+  <label class="username">
+    <span class="field-title">Username</span>
+    {{input value=username required=required}}
+    <small>Pick a user name to log in with.</small>
+  </label>
+
+  <label class="description">
+    <span class="field-title">E-mail</span>
+    {{input value=email type="email"}}
+    <small>For added security and password recovery, you can set an
+      e-mail address on your account.</small>
+  </label>
+
+  <label class="password">
+    <span class="field-title">Password</span>
+    {{input value=password type="password" maxlength="128" required=required}}
+    <small>Be secure. 8-128 characters allowed.</small>
+  </label>
+
+  <button {{action 'register'}} class="primary-action save">
+    Register account
+  </button>
+</form>
