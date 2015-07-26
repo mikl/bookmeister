@@ -29,7 +29,8 @@ module.exports = function(environment) {
     ENV.bookmeisterServer = 'http://localhost:6300';
 
     ENV.contentSecurityPolicy = {
-      'connect-src': "'self' http://localhost:6300 http://localhost:35729"
+      'connect-src': "'self' http://localhost:6300 http://localhost:35729",
+      'style-src': "'self'",
     };
   }
 
